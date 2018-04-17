@@ -12541,11 +12541,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rei Fujimaki\\source\\repos\\TugasBesarPemrogramanVisual\\TugasBesarPemrogramanVisual\\TugasBesarPemrogramanVisual.csproj",
+      "projectUniqueName": "C:\\Users\\Rei Fujimaki\\source\\repos\\tubesprovis\\TugasBesarPemrogramanVisual\\TugasBesarPemrogramanVisual.csproj",
       "projectName": "TugasBesarPemrogramanVisual",
-      "projectPath": "C:\\Users\\Rei Fujimaki\\source\\repos\\TugasBesarPemrogramanVisual\\TugasBesarPemrogramanVisual\\TugasBesarPemrogramanVisual.csproj",
+      "projectPath": "C:\\Users\\Rei Fujimaki\\source\\repos\\tubesprovis\\TugasBesarPemrogramanVisual\\TugasBesarPemrogramanVisual.csproj",
       "packagesPath": "C:\\Users\\Rei Fujimaki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rei Fujimaki\\source\\repos\\TugasBesarPemrogramanVisual\\TugasBesarPemrogramanVisual\\obj\\",
+      "outputPath": "C:\\Users\\Rei Fujimaki\\source\\repos\\tubesprovis\\TugasBesarPemrogramanVisual\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

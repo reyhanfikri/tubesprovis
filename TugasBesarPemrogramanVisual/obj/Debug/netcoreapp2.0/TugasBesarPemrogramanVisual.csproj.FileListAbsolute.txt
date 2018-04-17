@@ -9,3 +9,14 @@ C:\Users\Rei Fujimaki\source\repos\TugasBesarPemrogramanVisual\TugasBesarPemrogr
 C:\Users\Rei Fujimaki\source\repos\TugasBesarPemrogramanVisual\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.AssemblyInfo.cs
 C:\Users\Rei Fujimaki\source\repos\TugasBesarPemrogramanVisual\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.dll
 C:\Users\Rei Fujimaki\source\repos\TugasBesarPemrogramanVisual\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.pdb
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\bin\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.deps.json
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\bin\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.runtimeconfig.json
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\bin\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.runtimeconfig.dev.json
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\bin\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.dll
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\bin\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.pdb
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.csprojResolveAssemblyReference.cache
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.csproj.CoreCompileInputs.cache
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.AssemblyInfoInputs.cache
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.AssemblyInfo.cs
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.dll
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\TugasBesarPemrogramanVisual\obj\Debug\netcoreapp2.0\TugasBesarPemrogramanVisual.pdb
