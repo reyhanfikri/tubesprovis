@@ -12535,23 +12535,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rei Fujimaki\\.nuget\\packages\\": {},
+    "C:\\Users\\agungd\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rei Fujimaki\\source\\repos\\tubesprovis\\tubesprovis\\tubesprovis.csproj",
+      "projectUniqueName": "C:\\Users\\agungd\\Documents\\Visual Studio 2017\\tubesprovis\\tubesprovis\\tubesprovis.csproj",
       "projectName": "tubesprovis",
-      "projectPath": "C:\\Users\\Rei Fujimaki\\source\\repos\\tubesprovis\\tubesprovis\\tubesprovis.csproj",
-      "packagesPath": "C:\\Users\\Rei Fujimaki\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rei Fujimaki\\source\\repos\\tubesprovis\\tubesprovis\\obj\\",
+      "projectPath": "C:\\Users\\agungd\\Documents\\Visual Studio 2017\\tubesprovis\\tubesprovis\\tubesprovis.csproj",
+      "packagesPath": "C:\\Users\\agungd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\agungd\\Documents\\Visual Studio 2017\\tubesprovis\\tubesprovis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rei Fujimaki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\agungd\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
