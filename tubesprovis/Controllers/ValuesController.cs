@@ -13,7 +13,7 @@ namespace tubesprovis.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Hoee", "value2" };
+            return new string[] { "Hoeee", "value2" };
         }
 
         // GET api/values/5
