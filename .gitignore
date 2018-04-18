@@ -5,3 +5,9 @@
 *.lock
 tubesprovis/obj
 tubesprovis/bin
+*.ide-wal
+*.cache
+*.props
+*.targets
+*.json
+*.ide-shm
