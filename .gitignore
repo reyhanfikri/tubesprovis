@@ -3,16 +3,11 @@
 ################################################################################
 
 *.lock
-tubesprovis/obj
-tubesprovis/bin
-*.ide-wal
-*.cache
-*.props
-*.targets
-*.json
-*.assets.json
-*.ide-shm
-*.CoreCompileInputs.cache
-*.csproj.nuget.cache
-*.csproj.nuget.g.props
-*.csproj.nuget.g.targets
+.suo
+tubesprovis.csproj.CoreCompileInputs.cache
+storage.ide-shm
+storage.ide-wal
+tubesprovis.csproj.nuget.cache
+tubesprovis.csproj.nuget.g.props
+tubesprovis.csproj.nuget.g.targets
+project.assets.json
