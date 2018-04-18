@@ -1,0 +1,11 @@
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.deps.json
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.runtimeconfig.json
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.runtimeconfig.dev.json
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.dll
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.pdb
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.csprojResolveAssemblyReference.cache
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.csproj.CoreCompileInputs.cache
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.AssemblyInfoInputs.cache
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.AssemblyInfo.cs
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.dll
+C:\Users\Rei Fujimaki\source\repos\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.pdb
