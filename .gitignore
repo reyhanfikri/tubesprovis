@@ -10,4 +10,9 @@ tubesprovis/bin
 *.props
 *.targets
 *.json
+*.assets.json
 *.ide-shm
+*.CoreCompileInputs.cache
+*.csproj.nuget.cache
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
