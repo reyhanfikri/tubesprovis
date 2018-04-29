@@ -7,7 +7,7 @@ namespace tubesprovis.Model.tb_Genre
 {
     public class Genre_Class
     {
-        private int id_genre;
+        private string id_genre;
         private string genre;
 
         public Genre_Class()
@@ -15,7 +15,7 @@ namespace tubesprovis.Model.tb_Genre
 
         }
 
-        public int Id_genre { get => id_genre; set => id_genre = value; }
+        public string Id_genre { get => id_genre; set => id_genre = value; }
         public string Genre { get => genre; set => genre = value; }
     }
 }

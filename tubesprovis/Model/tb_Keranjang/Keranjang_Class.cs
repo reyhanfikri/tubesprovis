@@ -7,15 +7,15 @@ namespace tubesprovis.Model.tb_Keranjang
 {
     public class Keranjang_Class
     {
-        private int id_keranjang;
-        private int id_cust;
+        private string id_keranjang;
+        private string id_cust;
 
         public Keranjang_Class()
         {
 
         }
 
-        public int Id_keranjang { get => id_keranjang; set => id_keranjang = value; }
-        public int Id_cust { get => id_cust; set => id_cust = value; }
+        public string Id_keranjang { get => id_keranjang; set => id_keranjang = value; }
+        public string Id_cust { get => id_cust; set => id_cust = value; }
     }
 }

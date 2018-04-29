@@ -7,7 +7,7 @@ namespace tubesprovis.Model.tb_Customer
 {
     public class Cust_Class
     {
-        private int id_cust;
+        private string id_cust;
         private string nama_cust;
         private string username;
         private string email;
@@ -18,7 +18,7 @@ namespace tubesprovis.Model.tb_Customer
 
         }
 
-        public int Id_cust { get => id_cust; set => id_cust = value; }
+        public string Id_cust { get => id_cust; set => id_cust = value; }
         public string Nama_cust { get => nama_cust; set => nama_cust = value; }
         public string Username { get => username; set => username = value; }
         public string Email { get => email; set => email = value; }

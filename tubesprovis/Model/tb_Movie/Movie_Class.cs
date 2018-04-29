@@ -7,8 +7,8 @@ namespace tubesprovis.Model.tb_Movie
 {
     public class Movie_Class
     {
-        private int id_movie;
-        private int id_genre;
+        private string id_movie;
+        private string id_genre;
         private string judul;
         private int tahun_produksi;
         private DateTime durasi;
@@ -22,8 +22,8 @@ namespace tubesprovis.Model.tb_Movie
 
         }
 
-        public int Id_movie { get => id_movie; set => id_movie = value; }
-        public int Id_genre { get => id_genre; set => id_genre = value; }
+        public string Id_movie { get => id_movie; set => id_movie = value; }
+        public string Id_genre { get => id_genre; set => id_genre = value; }
         public string Judul { get => judul; set => judul = value; }
         public int Tahun_produksi { get => tahun_produksi; set => tahun_produksi = value; }
         public DateTime Durasi { get => durasi; set => durasi = value; }
