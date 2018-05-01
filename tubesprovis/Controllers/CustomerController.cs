@@ -4,7 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Web;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace tubesprovis.Controllers
 {
@@ -13,7 +18,7 @@ namespace tubesprovis.Controllers
     public class CustomerController : Controller
     {
         // GET: api/Customer/getAllCustomer
-        [HttpGet("getAllCustomer")]
+        [HttpGet("getAllCustomer"),Authorize]
         public IEnumerable<Model.tb_Customer.Cust_Class> GetAllCustomer()
         {
             var listcustomer = new List<Model.tb_Customer.Cust_Class>();
