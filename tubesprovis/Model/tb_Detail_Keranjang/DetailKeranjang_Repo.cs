@@ -71,7 +71,7 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
                 int harga_jual = detail_keranjang.Harga_jual;
                 int total_harga = detail_keranjang.Total_harga;
 
-                string query = "INSERT INTO tb_detail_keranjang VALUES (" + id_detail + ",'" + id_keranjang + "','" + id_dvd + "'" +
+                string query = "INSERT INTO tb_detail_keranjang VALUES (null,'" + id_keranjang + "','" + id_dvd + "'" +
                     ",'" + qty + "','" + harga_jual + "','" + total_harga + "');";
 
                 OpenConnection();

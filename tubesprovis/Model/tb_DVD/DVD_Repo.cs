@@ -69,7 +69,7 @@ namespace tubesprovis.Model.tb_DVD
                 int stock = dvd.Stock;
                 int harga_display = dvd.Harga_display;
 
-                string query = "INSERT INTO tb_customer VALUES (" + id_dvd + ",'" + id_movie + "','" + stock + "'" + " ,'"
+                string query = "INSERT INTO tb_dvd VALUES (null,'" + id_movie + "','" + stock + "'" + " ,'"
                     + harga_display + "');";
 
                 OpenConnection();

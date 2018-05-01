@@ -54,7 +54,7 @@ namespace tubesprovis.Controllers
             }
             catch (Exception e)
             {
-                return "GAGAL";
+                return e.Message;
             }
         }
 
