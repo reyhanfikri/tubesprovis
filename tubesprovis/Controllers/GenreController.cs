@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace tubesprovis.Controllers
+{
+    [Produces("application/json")]
+    [Route("api/Genre")]
+    public class GenreController : Controller
+    {
+        // GET: api/DVD/getAllGenre
+        [HttpGet("getAllGenre")]
+        public IEnumerable<Model.tb_Genre.Genre_Class> GetAllGenre()
+        {
+            var listgenre = new List<Model.tb_Genre.Genre_Class>();
+            var repositorygenre = new Model.tb_Genre.Genre_Repo();
+
+            try
+            {
+                listgenre = repositorygenre.getAllGenre();
+            }
+            catch (Exception ex)
+            {
+            }
+            return listgenre;
+        }
+
+        // GET: api/Genre/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+        
+        // POST: api/Genre
+        [HttpPost]
+        public void Post([FromBody]string value)
+        {
+        }
+        
+        // PUT: api/Genre/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+        
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
+    }
+}

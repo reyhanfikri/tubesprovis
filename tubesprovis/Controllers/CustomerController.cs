@@ -34,18 +34,35 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/Customer/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}")]
+        public Model.tb_Customer.Cust_Class Get(int id)
         {
-            return "value";
+            
+            var RP = new Model.tb_Customer.Cust_Repo();
+
+            Model.tb_Customer.Cust_Class value = RP.getById(id);
+
+            return value;
+            
         }
-        
+
         // POST: api/Customer
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpPost("Insert")]
+        public string Post([FromBody]Model.tb_Customer.Cust_Class value)
         {
+            var RP = new Model.tb_Customer.Cust_Repo();
+
+            try
+            {
+                RP.insertNewCustomer(value);
+                return "0K";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
-        
+
         // PUT: api/Customer/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
@@ -57,5 +74,7 @@ namespace tubesprovis.Controllers
         public void Delete(int id)
         {
         }
+
+
     }
 }

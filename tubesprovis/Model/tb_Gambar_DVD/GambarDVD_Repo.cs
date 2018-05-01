@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Dapper;
 
-namespace tubesprovis.Model.tb_Genre
+namespace tubesprovis.Model.tb_Gambar_DVD
 {
-    public class Genre_Repo
+    public class GambarDVD_Repo
     {
         private MySqlConnection myConn;
 
-        public Genre_Repo()
+        public GambarDVD_Repo()
         {
             string connectionString = "Server=localhost;Database=db_dvd;Username=root;Password=;SslMode=none";
             myConn = new MySqlConnection(connectionString);
@@ -41,14 +41,14 @@ namespace tubesprovis.Model.tb_Genre
             }
         }
 
-        public List<Genre_Class> getAllGenre()
+        public List<GambarDVD_Class> getAllGenre()
         {
             try
             {
                 string query = "SELECT * FROM tb_genre";
 
                 OpenConnection();
-                List<Genre_Class> hasil = myConn.Query<Genre_Class>(query).ToList();
+                List<GambarDVD_Class> hasil = myConn.Query<GambarDVD_Class>(query).ToList();
                 closeConnection();
 
                 return hasil;
