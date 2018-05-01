@@ -86,9 +86,8 @@ namespace tubesprovis.Model.tb_DVD
         {
             try
             {
-                int Stock = stock_berkurang;
 
-                string query = "UPDATE tb_dvd SET stock = " + Stock + " WHERE id_dvd = " + id + ";";
+                string query = "UPDATE tb_dvd SET stock = " + stock_berkurang + " WHERE id_dvd = " + id + ";";
 
                 OpenConnection();
                 var hasil = myConn.Execute(query);

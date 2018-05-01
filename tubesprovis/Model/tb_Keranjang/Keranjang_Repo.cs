@@ -64,7 +64,7 @@ namespace tubesprovis.Model.tb_Keranjang
             int id_keranjang = keranjang.Id_keranjang;
             int id_cust = keranjang.Id_cust;
 
-            string query = "INSERT INTO tb_keranjang VALUES (" + id_keranjang + ",'" + id_cust + "');";
+            string query = "INSERT INTO tb_keranjang VALUES (null," + id_keranjang + ");";
 
             OpenConnection();
             var hasil = myConn.Execute(query);
