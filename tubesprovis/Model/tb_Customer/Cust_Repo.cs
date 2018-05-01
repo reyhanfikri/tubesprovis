@@ -25,6 +25,7 @@ namespace tubesprovis.Model.tb_Customer
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -36,6 +37,7 @@ namespace tubesprovis.Model.tb_Customer
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -60,18 +62,24 @@ namespace tubesprovis.Model.tb_Customer
         
         public void insertNewCustomer(Cust_Class cust)
         {
-            int id_cust = cust.Id_cust;
-            string nama_cust = cust.Nama_cust;
-            string username = cust.Username;
-            string email = cust.Email;
-            string password = cust.Password;
+            try
+            {
+                int id_cust = cust.Id_cust;
+                string nama_cust = cust.Nama_cust;
+                string username = cust.Username;
+                string email = cust.Email;
+                string password = cust.Password;
 
-            string query = "INSERT INTO tb_customer VALUES (" + id_cust + ",'" + nama_cust + "','" + username + "'" + " ,'"
-                + email + "','" + password + "');";
+                string query = "INSERT INTO tb_customer VALUES (" + id_cust + ",'" + nama_cust + "','" + username + "'" + " ,'"
+                    + email + "','" + password + "');";
 
-            OpenConnection();
-            var hasil = myConn.Execute(query);
-            closeConnection();
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            } catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Cust_Class getById(int Id)

@@ -26,6 +26,7 @@ namespace tubesprovis.Model.tb_DVD
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -37,6 +38,7 @@ namespace tubesprovis.Model.tb_DVD
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -60,28 +62,41 @@ namespace tubesprovis.Model.tb_DVD
 
         public void insertNewDVD(DVD_Class dvd)
         {
-            int id_dvd = dvd.Id_dvd;
-            int id_movie = dvd.Id_movie;
-            int stock = dvd.Stock;
-            int harga_display = dvd.Harga_display;
+            try
+            {
+                int id_dvd = dvd.Id_dvd;
+                int id_movie = dvd.Id_movie;
+                int stock = dvd.Stock;
+                int harga_display = dvd.Harga_display;
 
-            string query = "INSERT INTO tb_customer VALUES (" + id_dvd + ",'" + id_movie + "','" + stock + "'" + " ,'"
-                + harga_display + "');";
+                string query = "INSERT INTO tb_customer VALUES (" + id_dvd + ",'" + id_movie + "','" + stock + "'" + " ,'"
+                    + harga_display + "');";
 
-            OpenConnection();
-            var hasil = myConn.Execute(query);
-            closeConnection();
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         
         public void updateStockDVD(int id,int stock_berkurang)
         {
-            int Stock = stock_berkurang;
+            try
+            {
+                int Stock = stock_berkurang;
 
-            string query = "UPDATE tb_dvd SET stock = " + Stock + " WHERE id_dvd = " + id + ";";
+                string query = "UPDATE tb_dvd SET stock = " + Stock + " WHERE id_dvd = " + id + ";";
 
-            OpenConnection();
-            var hasil = myConn.Execute(query);
-            closeConnection();
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            } catch (Exception)
+            {
+            }
+            
         }
     }
 }

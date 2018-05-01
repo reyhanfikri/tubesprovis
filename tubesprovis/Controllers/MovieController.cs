@@ -51,14 +51,12 @@ namespace tubesprovis.Controllers
         {
 
             var RP = new Model.tb_Movie.Movie_Repo();
-
             Model.tb_Movie.Movie_Class value = RP.getById(id);
-
             return value;
 
         }
 
-        // POST: api/Movie
+        // POST: api/Movie/insert
         [HttpPost("Insert")]
         public string Post([FromBody]Model.tb_Movie.Movie_Class value)
         {

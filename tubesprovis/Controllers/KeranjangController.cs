@@ -35,7 +35,7 @@ namespace tubesprovis.Controllers
             return "value";
         }
         
-        // POST: api/Keranjang
+        // POST: api/Keranjang/insert
         [HttpPost("insert")]
         public string Post([FromBody]Model.tb_Keranjang.Keranjang_Class value)
         {

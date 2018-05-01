@@ -26,6 +26,7 @@ namespace tubesprovis.Model.tb_Movie
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -37,6 +38,7 @@ namespace tubesprovis.Model.tb_Movie
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -60,22 +62,29 @@ namespace tubesprovis.Model.tb_Movie
 
         public void insertNewMovie(Movie_Class movie)
         {
-            int id_movie = movie.Id_movie;
-            int id_genre = movie.Id_genre;
-            string judul = movie.Judul;
-            int tahun_produksi = movie.Tahun_produksi;
-            int durasi = movie.Durasi;
-            decimal rating_imdb = movie.Rating_imdb;
-            string rated = movie.Rated;
-            string bahasa = movie.Bahasa;
-            string subtitle = movie.Subtitle;
+            try
+            {
+                int id_movie = movie.Id_movie;
+                int id_genre = movie.Id_genre;
+                string judul = movie.Judul;
+                int tahun_produksi = movie.Tahun_produksi;
+                int durasi = movie.Durasi;
+                decimal rating_imdb = movie.Rating_imdb;
+                string rated = movie.Rated;
+                string bahasa = movie.Bahasa;
+                string subtitle = movie.Subtitle;
 
-            string query = "INSERT INTO tb_customer VALUES (" + id_movie + ",'" + id_genre + "','" + judul + "'" + " ,'"
-                + tahun_produksi + "','" + durasi + "','" + rating_imdb + "','" + rated + "','" + bahasa + "','" + subtitle + "');";
+                string query = "INSERT INTO tb_customer VALUES (" + id_movie + ",'" + id_genre + "','" + judul + "'" + " ,'"
+                    + tahun_produksi + "','" + durasi + "','" + rating_imdb + "','" + rated + "','" + bahasa + "','" + subtitle + "');";
 
-            OpenConnection();
-            var hasil = myConn.Execute(query);
-            closeConnection();
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Movie_Class getById(int Id)
@@ -124,7 +133,6 @@ namespace tubesprovis.Model.tb_Movie
                 OpenConnection();
                 var hasil = myConn.Execute(query);
                 closeConnection();
-                
             }
             catch (Exception ex)
             {

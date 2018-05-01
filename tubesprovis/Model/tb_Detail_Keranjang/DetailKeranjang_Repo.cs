@@ -26,6 +26,7 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -37,6 +38,7 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -60,19 +62,25 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
 
         public void insertDetailKeranjang(DetailKeranjang_Class detail_keranjang)
         {
-            int id_detail = detail_keranjang.Id_detail;
-            int id_keranjang = detail_keranjang.Id_keranjang;
-            int id_dvd = detail_keranjang.Id_dvd;
-            int qty = detail_keranjang.Qty;
-            int harga_jual = detail_keranjang.Harga_jual;
-            int total_harga = detail_keranjang.Total_harga;
+            try
+            {
+                int id_detail = detail_keranjang.Id_detail;
+                int id_keranjang = detail_keranjang.Id_keranjang;
+                int id_dvd = detail_keranjang.Id_dvd;
+                int qty = detail_keranjang.Qty;
+                int harga_jual = detail_keranjang.Harga_jual;
+                int total_harga = detail_keranjang.Total_harga;
 
-            string query = "INSERT INTO tb_detail_keranjang VALUES (" + id_detail + ",'" + id_keranjang + "','" + id_dvd + "'" +
-                ",'" + qty + "','" + harga_jual + "','" + total_harga + "');";
+                string query = "INSERT INTO tb_detail_keranjang VALUES (" + id_detail + ",'" + id_keranjang + "','" + id_dvd + "'" +
+                    ",'" + qty + "','" + harga_jual + "','" + total_harga + "');";
 
-            OpenConnection();
-            var hasil = myConn.Execute(query);
-            closeConnection();
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            } catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

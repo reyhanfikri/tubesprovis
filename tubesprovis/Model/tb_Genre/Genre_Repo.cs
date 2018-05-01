@@ -25,6 +25,7 @@ namespace tubesprovis.Model.tb_Genre
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
@@ -36,6 +37,7 @@ namespace tubesprovis.Model.tb_Genre
             }
             catch (Exception ex)
             {
+                throw ex;
             }
         }
 
