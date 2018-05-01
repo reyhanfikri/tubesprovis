@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Dapper;
 
 namespace tubesprovis.Model.tb_Movie
 {
@@ -13,7 +14,7 @@ namespace tubesprovis.Model.tb_Movie
 
         public Movie_Repo()
         {
-            string connectionString = "Server=localhost;Database=db_dvd;Username=root;Password=";
+            string connectionString = "Server=localhost;Database=db_dvd;Username=root;Password=;SslMode=none";
             myConn = new MySqlConnection(connectionString);
         }
 
@@ -36,6 +37,24 @@ namespace tubesprovis.Model.tb_Movie
             }
             catch (Exception ex)
             {
+            }
+        }
+
+        public List<Movie_Class> getAllMovie()
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_movie";
+
+                OpenConnection();
+                List<Movie_Class> hasil = myConn.Query<Movie_Class>(query).ToList();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

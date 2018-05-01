@@ -4,44 +4,44 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Web;
 
 namespace tubesprovis.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Customer")]
-    public class CustomerController : Controller
+    [Route("api/DetailKeranjang")]
+    public class DetailKeranjangController : Controller
     {
-        // GET: api/Customer/getAllCustomer
-        [HttpGet("getAllCustomer")]
-        public IEnumerable<Model.tb_Customer.Cust_Class> GetAllCustomer()
+        // GET: api/DetailKeranjang/getAllDetailKeranjang
+        [HttpGet("getAllDetailKeranjang")]
+        public IEnumerable<Model.tb_Detail_Keranjang.DetailKeranjang_Class> GetAllDetailKeranjang()
         {
-            var listcustomer = new List<Model.tb_Customer.Cust_Class>();
-            var repositorycust = new Model.tb_Customer.Cust_Repo();
+            var listdetailkeranjang = new List<Model.tb_Detail_Keranjang.DetailKeranjang_Class>();
+            var repositorydetailkeranjang = new Model.tb_Detail_Keranjang.DetailKeranjang_Repo();
 
             try
             {
-                listcustomer = repositorycust.getAllCustomer();
-            } catch (Exception ex)
+                listdetailkeranjang = repositorydetailkeranjang.getAllDetailKeranjang();
+            }
+            catch (Exception ex)
             {
             }
-            return listcustomer;
+            return listdetailkeranjang;
         }
 
-        // GET: api/Customer/5
+        // GET: api/DetailKeranjang/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
         
-        // POST: api/Customer
+        // POST: api/DetailKeranjang
         [HttpPost]
         public void Post([FromBody]string value)
         {
         }
         
-        // PUT: api/Customer/5
+        // PUT: api/DetailKeranjang/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {

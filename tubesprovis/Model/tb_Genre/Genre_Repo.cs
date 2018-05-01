@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Dapper;
 
 namespace tubesprovis.Model.tb_Genre
 {
@@ -12,7 +13,7 @@ namespace tubesprovis.Model.tb_Genre
 
         public Genre_Repo()
         {
-            string connectionString = "Server=localhost;Database=db_dvd;Username=root;Password=";
+            string connectionString = "Server=localhost;Database=db_dvd;Username=root;Password=;SslMode=none";
             myConn = new MySqlConnection(connectionString);
         }
 
@@ -38,6 +39,22 @@ namespace tubesprovis.Model.tb_Genre
             }
         }
 
-       
+        public List<Genre_Class> getAllGenre()
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_genre";
+
+                OpenConnection();
+                List<Genre_Class> hasil = myConn.Query<Genre_Class>(query).ToList();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace tubesprovis.Model.tb_Customer
 
         public Cust_Repo()
         {
-            string connectionString = "Server=localhost;Database=db_dvd;Username=root;Password=;";
+            string connectionString = "Server=localhost;Database=db_dvd;Username=root;Password=;SslMode=none";
             myConn = new MySqlConnection(connectionString);
         }
 
