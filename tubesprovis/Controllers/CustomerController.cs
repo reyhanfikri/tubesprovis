@@ -19,7 +19,7 @@ namespace tubesprovis.Controllers
     {
         // GET: api/Customer/getAllCustomer
         [HttpGet("getAllCustomer"),Authorize]
-        public IEnumerable<Model.tb_Customer.Cust_Class> GetAllCustomer()
+        public IActionResult GetAllCustomer()
         {
             var listcustomer = new List<Model.tb_Customer.Cust_Class>();
             var repositorycust = new Model.tb_Customer.Cust_Repo();
@@ -27,10 +27,18 @@ namespace tubesprovis.Controllers
             try
             {
                 listcustomer = repositorycust.getAllCustomer();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
             }
-            return listcustomer;
+            if (listcustomer == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listcustomer);
+            }
         }
 
         // GET: api/Customer/5

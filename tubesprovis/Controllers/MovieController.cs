@@ -13,7 +13,7 @@ namespace tubesprovis.Controllers
     {
         // GET: api/DVD/getAllMovie
         [HttpGet("getAllMovie")]
-        public IEnumerable<Model.tb_Movie.Movie_Class> GetAllMovie()
+        public IActionResult GetAllMovie()
         {
             var listmovie = new List<Model.tb_Movie.Movie_Class>();
             var repositorymovie = new Model.tb_Movie.Movie_Repo();
@@ -25,7 +25,15 @@ namespace tubesprovis.Controllers
             catch (Exception ex)
             {
             }
-            return listmovie;
+
+            if (listmovie == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listmovie);
+            }
         }
 
         // GET: api/DVD/getAllMovie

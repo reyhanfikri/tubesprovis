@@ -13,7 +13,7 @@ namespace tubesprovis.Controllers
     {
         // GET: api/DVD/getAllDVD
         [HttpGet("getAllDVD")]
-        public IEnumerable<Model.tb_DVD.DVD_Class> GetAllDVD()
+        public IActionResult GetAllDVD()
         {
             var listdvd = new List<Model.tb_DVD.DVD_Class>();
             var repositorydvd = new Model.tb_DVD.DVD_Repo();
@@ -25,7 +25,15 @@ namespace tubesprovis.Controllers
             catch (Exception ex)
             {
             }
-            return listdvd;
+
+            if (listdvd == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listdvd);
+            }
         }
 
         // GET: api/DVD/5

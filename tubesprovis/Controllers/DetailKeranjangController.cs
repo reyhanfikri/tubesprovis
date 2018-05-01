@@ -13,7 +13,7 @@ namespace tubesprovis.Controllers
     {
         // GET: api/DetailKeranjang/getAllDetailKeranjang
         [HttpGet("getAllDetailKeranjang")]
-        public IEnumerable<Model.tb_Detail_Keranjang.DetailKeranjang_Class> GetAllDetailKeranjang()
+        public IActionResult GetAllDetailKeranjang()
         {
             var listdetailkeranjang = new List<Model.tb_Detail_Keranjang.DetailKeranjang_Class>();
             var repositorydetailkeranjang = new Model.tb_Detail_Keranjang.DetailKeranjang_Repo();
@@ -24,8 +24,18 @@ namespace tubesprovis.Controllers
             }
             catch (Exception ex)
             {
+
             }
-            return listdetailkeranjang;
+
+            if (listdetailkeranjang == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listdetailkeranjang);
+            }
+
         }
 
         // GET: api/DetailKeranjang/5

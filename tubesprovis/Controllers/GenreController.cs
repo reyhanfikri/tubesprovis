@@ -13,7 +13,7 @@ namespace tubesprovis.Controllers
     {
         // GET: api/DVD/getAllGenre
         [HttpGet("getAllGenre")]
-        public IEnumerable<Model.tb_Genre.Genre_Class> GetAllGenre()
+        public IActionResult GetAllGenre()
         {
             var listgenre = new List<Model.tb_Genre.Genre_Class>();
             var repositorygenre = new Model.tb_Genre.Genre_Repo();
@@ -25,7 +25,14 @@ namespace tubesprovis.Controllers
             catch (Exception ex)
             {
             }
-            return listgenre;
+            if (listgenre == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listgenre);
+            }
         }
 
         // GET: api/Genre/5
