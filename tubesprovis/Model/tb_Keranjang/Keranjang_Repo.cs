@@ -56,5 +56,17 @@ namespace tubesprovis.Model.tb_Keranjang
                 throw ex;
             }
         }
+
+        public void insertKeranjang(Keranjang_Class keranjang)
+        {
+            int id_keranjang = keranjang.Id_keranjang;
+            int id_cust = keranjang.Id_cust;
+
+            string query = "INSERT INTO tb_keranjang VALUES (" + id_keranjang + ",'" + id_cust + "');";
+
+            OpenConnection();
+            var hasil = myConn.Execute(query);
+            closeConnection();
+        }
     }
 }

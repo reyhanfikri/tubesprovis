@@ -28,19 +28,53 @@ namespace tubesprovis.Controllers
             return listmovie;
         }
 
+        // GET: api/DVD/getAllMovie
+        [HttpGet("getAllMovieAndID")]
+        public IEnumerable<Model.tb_Movie.Movie_Class> GetAllMovieAndID()
+        {
+            var listmovie = new List<Model.tb_Movie.Movie_Class>();
+            var repositorymovie = new Model.tb_Movie.Movie_Repo();
+
+            try
+            {
+                listmovie = repositorymovie.getAllMovie();
+            }
+            catch (Exception ex)
+            {
+            }
+            return listmovie;
+        }
+
         // GET: api/Movie/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Model.tb_Movie.Movie_Class Get(int id)
         {
-            return "value";
+
+            var RP = new Model.tb_Movie.Movie_Repo();
+
+            Model.tb_Movie.Movie_Class value = RP.getById(id);
+
+            return value;
+
         }
-        
+
         // POST: api/Movie
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpPost("Insert")]
+        public string Post([FromBody]Model.tb_Movie.Movie_Class value)
         {
+            var RP = new Model.tb_Movie.Movie_Repo();
+
+            try
+            {
+                RP.insertNewMovie(value);
+                return "0K";
+            }
+            catch (Exception e)
+            {
+                return "GAGAL";
+            }
         }
-        
+
         // PUT: api/Movie/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
@@ -49,8 +83,19 @@ namespace tubesprovis.Controllers
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public string Delete(int id)
         {
+            var RP = new Model.tb_Movie.Movie_Repo();
+
+            try
+            {
+                RP.deleteMovieById(id);
+                return "0K";
+            }
+            catch (Exception e)
+            {
+                return "GAGAL";
+            }
         }
     }
 }

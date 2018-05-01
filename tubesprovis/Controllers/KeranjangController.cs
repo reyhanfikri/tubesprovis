@@ -36,11 +36,22 @@ namespace tubesprovis.Controllers
         }
         
         // POST: api/Keranjang
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpPost("insert")]
+        public string Post([FromBody]Model.tb_Keranjang.Keranjang_Class value)
         {
+            var RP = new Model.tb_Keranjang.Keranjang_Repo();
+
+            try
+            {
+                RP.insertKeranjang(value);
+                return "0K";
+            }
+            catch (Exception e)
+            {
+                return "GAGAL";
+            }
         }
-        
+
         // PUT: api/Keranjang/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)

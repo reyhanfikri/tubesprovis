@@ -32,21 +32,43 @@ namespace tubesprovis.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
+
             return "value";
         }
-        
+
         // POST: api/DVD
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpPost("insert")]
+        public string Post([FromBody]Model.tb_DVD.DVD_Class value)
         {
+            var RP = new Model.tb_DVD.DVD_Repo();
+
+            try
+            {
+                RP.insertNewDVD(value);
+                return "0K";
+            }
+            catch (Exception e)
+            {
+                return "GAGAL";
+            }
         }
-        
         // PUT: api/DVD/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public string Put(int id,int stock_berkurang)
         {
+            var RP = new Model.tb_DVD.DVD_Repo();
+
+            try
+            {
+                RP.updateStockDVD(id,stock_berkurang);
+                return "OK";
+            }
+            catch (Exception e)
+            {
+                return "FAIL";
+            }
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)

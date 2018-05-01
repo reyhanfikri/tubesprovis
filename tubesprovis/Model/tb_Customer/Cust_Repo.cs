@@ -56,5 +56,42 @@ namespace tubesprovis.Model.tb_Customer
                 throw ex;
             }
         }
+
+        
+        public void insertNewCustomer(Cust_Class cust)
+        {
+            int id_cust = cust.Id_cust;
+            string nama_cust = cust.Nama_cust;
+            string username = cust.Username;
+            string email = cust.Email;
+            string password = cust.Password;
+
+            string query = "INSERT INTO tb_customer VALUES (" + id_cust + ",'" + nama_cust + "','" + username + "'" + " ,'"
+                + email + "','" + password + "');";
+
+            OpenConnection();
+            var hasil = myConn.Execute(query);
+            closeConnection();
+        }
+
+        public Cust_Class getById(int Id)
+        {
+
+            try
+            {
+                string query = "SELECT * FROM tb_customer  WHERE id = " + Id + ";";
+
+                OpenConnection();
+                Cust_Class hasil = myConn.Query<Cust_Class>(query, new { id = Id }).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }
