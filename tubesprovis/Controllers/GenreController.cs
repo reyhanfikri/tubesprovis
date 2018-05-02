@@ -47,13 +47,24 @@ namespace tubesprovis.Controllers
         public void Post([FromBody]string value)
         {
         }
-        
+
         // PUT: api/Genre/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut("{id}/{newGenre}")]
+        public IActionResult Put(int Id, string Genre)
         {
+            var RP = new Model.tb_Genre.Genre_Repo();
+
+            try
+            {
+                RP.updateNamaGenre(Id, Genre);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)

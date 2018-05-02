@@ -99,11 +99,22 @@ namespace tubesprovis.Controllers
         }
 
         // PUT: api/Movie/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut("{id}/{newJudul}")]
+        public IActionResult Put(int Id, string Judul)
         {
+            var RP = new Model.tb_Movie.Movie_Repo();
+
+            try
+            {
+                RP.updateJudulMovie(Id, Judul);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest();
+            }
         }
-        
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

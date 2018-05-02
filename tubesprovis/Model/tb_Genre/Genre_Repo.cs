@@ -58,5 +58,21 @@ namespace tubesprovis.Model.tb_Genre
                 throw ex;
             }
         }
+
+        public void updateNamaGenre(int Id, string Genre)
+        {
+            try
+            {
+
+                string query = "UPDATE tb_genre SET genre = " + Genre + " WHERE id_genre = " + Id + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

@@ -137,5 +137,21 @@ namespace tubesprovis.Model.tb_Movie
                 throw ex;
             }
         }
+
+        public void updateJudulMovie(int Id, string Judul)
+        {
+            try
+            {
+
+                string query = "UPDATE tb_movie SET judul = " + Judul + " WHERE id_movie = " + Id + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
