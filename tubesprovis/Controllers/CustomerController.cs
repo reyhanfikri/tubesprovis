@@ -64,18 +64,18 @@ namespace tubesprovis.Controllers
 
         // POST: api/Customer
         [HttpPost("Insert")]
-        public string Post([FromBody]Model.tb_Customer.Cust_Class value)
+        public IActionResult Post([FromBody]Model.tb_Customer.Cust_Class value)
         {
             var RP = new Model.tb_Customer.Cust_Repo();
 
             try
             {
                 RP.insertNewCustomer(value);
-                return "0K";
+                return Created("",value);
             }
             catch (Exception e)
             {
-                return e.Message;
+                return BadRequest();
             }
         }
 
