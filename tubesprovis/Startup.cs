@@ -53,8 +53,13 @@ namespace tubesprovis
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler();
+            }
 
             app.UseAuthentication();
+            app.UseStatusCodePages();
 
             app.UseMvc();
         }
