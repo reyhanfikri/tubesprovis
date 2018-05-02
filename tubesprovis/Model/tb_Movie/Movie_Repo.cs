@@ -104,7 +104,7 @@ namespace tubesprovis.Model.tb_Movie
             }
         }
 
-        public List<Movie_Class> getAllMovieAndID()
+        public List<Movie_Class> getAllNamaAndIDMovie()
         {
             try
             {

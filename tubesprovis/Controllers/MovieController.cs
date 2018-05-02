@@ -36,16 +36,16 @@ namespace tubesprovis.Controllers
             }
         }
 
-        // GET: api/DVD/getAllMovie
-        [HttpGet("getAllMovieAndID")]
-        public IEnumerable<Model.tb_Movie.Movie_Class> GetAllMovieAndID()
+        // GET: api/DVD/getAllNamaAndIDMovie
+        [HttpGet("getAllNamaAndIDMovie")]
+        public IEnumerable<Model.tb_Movie.Movie_Class> getAllNamaAndIDMovie()
         {
             var listmovie = new List<Model.tb_Movie.Movie_Class>();
             var repositorymovie = new Model.tb_Movie.Movie_Repo();
 
             try
             {
-                listmovie = repositorymovie.getAllMovie();
+                listmovie = repositorymovie.getAllNamaAndIDMovie();
             }
             catch (Exception ex)
             {
