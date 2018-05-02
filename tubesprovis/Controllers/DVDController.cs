@@ -62,18 +62,18 @@ namespace tubesprovis.Controllers
         }
         // PUT: api/DVD/5
         [HttpPut("{id}/{stock_berkurang}")]
-        public string Put(int id,int stock_berkurang)
+        public IActionResult Put(int id,int stock_berkurang)
         {
             var RP = new Model.tb_DVD.DVD_Repo();
 
             try
             {
                 RP.updateStockDVD(id,stock_berkurang);
-                return "OK";
+                return Ok();
             }
             catch (Exception e)
             {
-                return "FAIL";
+                return BadRequest();
             }
         }
 

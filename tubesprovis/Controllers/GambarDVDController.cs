@@ -69,18 +69,18 @@ namespace tubesprovis.Controllers
 
         // PUT: api/GambarDVD/5
         [HttpPut("{id}")]
-        public string Put(int id, string gambar_sampul)
+        public IActionResult Put(int id, string gambar_sampul)
         {
             var RP = new Model.tb_Gambar_DVD.GambarDVD_Repo();
 
             try
             {
                 RP.updateCoverDVD(id, gambar_sampul);
-                return "OK";
+                return Ok();
             }
             catch (Exception e)
             {
-                return "FAIL";
+                return BadRequest();
             }
         }
 
