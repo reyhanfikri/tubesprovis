@@ -13,7 +13,7 @@ namespace tubesprovis.Controllers
     {
         // GET: api/GambarDVD/getAllCover
         [HttpGet("getAllCover")]
-        public IEnumerable<Model.tb_Gambar_DVD.GambarDVD_Class> getAllCover()
+        public IActionResult getAllCover()
         {
             var listcover = new List<Model.tb_Gambar_DVD.GambarDVD_Class>();
             var repositorycover = new Model.tb_Gambar_DVD.GambarDVD_Repo();
@@ -25,7 +25,15 @@ namespace tubesprovis.Controllers
             catch (Exception ex)
             {
             }
-            return listcover;
+            
+            if(listcover == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listcover);
+            }
         }
 
         // GET: api/GambarDVD/5
@@ -44,18 +52,18 @@ namespace tubesprovis.Controllers
 
         // POST: api/GambarDVD
         [HttpPost("insert")]
-        public string Post([FromBody]Model.tb_Gambar_DVD.GambarDVD_Class value)
+        public IActionResult Post([FromBody]Model.tb_Gambar_DVD.GambarDVD_Class value)
         {
             var RP = new Model.tb_Gambar_DVD.GambarDVD_Repo();
 
             try
             {
                 RP.insertNewCover(value);
-                return "0K";
+                return Created("", value);
             }
             catch (Exception e)
             {
-                return "GAGAL";
+                return BadRequest();
             }
         }
 

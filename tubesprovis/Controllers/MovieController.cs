@@ -38,7 +38,7 @@ namespace tubesprovis.Controllers
 
         // GET: api/DVD/getAllNamaAndIDMovie
         [HttpGet("getAllNamaAndIDMovie")]
-        public IEnumerable<Model.tb_Movie.Movie_Class> getAllNamaAndIDMovie()
+        public IActionResult getAllNamaAndIDMovie()
         {
             var listmovie = new List<Model.tb_Movie.Movie_Class>();
             var repositorymovie = new Model.tb_Movie.Movie_Repo();
@@ -50,17 +50,34 @@ namespace tubesprovis.Controllers
             catch (Exception ex)
             {
             }
-            return listmovie;
+            if(listmovie == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listmovie);
+            }
+       
         }
 
         // GET: api/Movie/5
         [HttpGet("{id}")]
-        public Model.tb_Movie.Movie_Class Get(int id)
+        public IActionResult Get(int id)
         {
-
+            var value = new Model.tb_Movie.Movie_Class();
             var RP = new Model.tb_Movie.Movie_Repo();
-            Model.tb_Movie.Movie_Class value = RP.getById(id);
-            return value;
+            value = RP.getById(id);
+
+            if(value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return NotFound();
+            }
+            
 
         }
 
