@@ -26,11 +26,11 @@ namespace tubesprovis.Controllers
 
         [AllowAnonymous]
         [HttpPost("GetToken", Name = "GetToken")]
-        public IActionResult GetToken([FromBody]LoginModel login)
+        public IActionResult GetToken([FromBody]Model.LoginModel login)
         {
             IActionResult response = NotFound(login);
-            RepoUserModel repoM = new RepoUserModel();
-            RepoLoginmodel repoL = new RepoLoginmodel();
+            Model.RepoUserModel repoM = new Model.RepoUserModel();
+            Model.RepoLoginmodel repoL = new Model.RepoLoginmodel();
 
 
             var user = repoM.Authenticate(login);

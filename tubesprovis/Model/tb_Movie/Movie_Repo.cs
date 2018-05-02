@@ -64,7 +64,6 @@ namespace tubesprovis.Model.tb_Movie
         {
             try
             {
-                int id_movie = movie.Id_movie;
                 int id_genre = movie.Id_genre;
                 string judul = movie.Judul;
                 int tahun_produksi = movie.Tahun_produksi;
@@ -74,7 +73,7 @@ namespace tubesprovis.Model.tb_Movie
                 string bahasa = movie.Bahasa;
                 string subtitle = movie.Subtitle;
 
-                string query = "INSERT INTO tb_movie VALUES (null, " + id_genre + ", '" + judul + "', " + tahun_produksi + ", " + durasi + ", " + rating_imdb + ", '" + rated + "', '" + bahasa + "', '" + subtitle + "');";
+                string query = "INSERT INTO tb_movie VALUES (null, '" + id_genre + "', '" + judul + "', '" + tahun_produksi + "', '" + durasi + "', '" + rating_imdb + "', '" + rated + "', '" + bahasa + "', '" + subtitle + "')";
 
                 OpenConnection();
                 var hasil = myConn.Execute(query);
@@ -127,7 +126,7 @@ namespace tubesprovis.Model.tb_Movie
         {
             try
             {
-                string query = "DELETE FROM t_parts WHERE id = " + Id + ";";
+                string query = "DELETE FROM tb_movie WHERE id_movie = " + Id + ";";
 
                 OpenConnection();
                 var hasil = myConn.Execute(query);
