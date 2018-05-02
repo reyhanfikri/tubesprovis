@@ -43,14 +43,22 @@ namespace tubesprovis.Controllers
 
         // GET: api/Customer/5
         [HttpGet("{id}")]
-        public Model.tb_Customer.Cust_Class Get(int id)
+        public IActionResult Get(int id)
         {
-            
+            var value = new Model.tb_Customer.Cust_Class();
             var RP = new Model.tb_Customer.Cust_Repo();
 
-            Model.tb_Customer.Cust_Class value = RP.getById(id);
+            value = RP.getById(id);
 
-            return value;
+            if(value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return NotFound();
+            }
+            
             
         }
 
