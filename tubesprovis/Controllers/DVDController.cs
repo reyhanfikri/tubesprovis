@@ -46,18 +46,18 @@ namespace tubesprovis.Controllers
 
         // POST: api/DVD
         [HttpPost("insert")]
-        public string Post([FromBody]Model.tb_DVD.DVD_Class value)
+        public IActionResult Post([FromBody]Model.tb_DVD.DVD_Class value)
         {
             var RP = new Model.tb_DVD.DVD_Repo();
 
             try
             {
                 RP.insertNewDVD(value);
-                return "0K";
+                return Created("",value);
             }
             catch (Exception e)
             {
-                return "GAGAL";
+                return BadRequest();
             }
         }
         // PUT: api/DVD/5

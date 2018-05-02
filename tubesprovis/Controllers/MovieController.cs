@@ -66,18 +66,18 @@ namespace tubesprovis.Controllers
 
         // POST: api/Movie/insert
         [HttpPost("Insert")]
-        public string Post([FromBody]Model.tb_Movie.Movie_Class value)
+        public IActionResult Post([FromBody]Model.tb_Movie.Movie_Class value)
         {
             var RP = new Model.tb_Movie.Movie_Repo();
 
             try
             {
                 RP.insertNewMovie(value);
-                return "0K";
+                return Created("",value);
             }
             catch (Exception e)
             {
-                return e.Message;
+                return BadRequest();
             }
         }
 

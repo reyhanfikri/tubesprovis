@@ -45,18 +45,18 @@ namespace tubesprovis.Controllers
         
         // POST: api/Keranjang/insert
         [HttpPost("insert")]
-        public string Post([FromBody]Model.tb_Keranjang.Keranjang_Class value)
+        public IActionResult Post([FromBody]Model.tb_Keranjang.Keranjang_Class value)
         {
             var RP = new Model.tb_Keranjang.Keranjang_Repo();
 
             try
             {
                 RP.insertKeranjang(value);
-                return "0K";
+                return Created("",value);
             }
             catch (Exception e)
             {
-                return "GAGAL";
+                return BadRequest();
             }
         }
 
