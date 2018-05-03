@@ -14,7 +14,7 @@ namespace tubesprovis.Model
     {
         public UserModel Authenticate(LoginModel login)
         {
-            UserModel user = null;
+            UserModel user = new UserModel();
             var listcustomer = new List<tb_Customer.Cust_Class>();
             var repositorycust = new tb_Customer.Cust_Repo();
 

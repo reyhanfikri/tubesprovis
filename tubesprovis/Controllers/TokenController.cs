@@ -28,7 +28,7 @@ namespace tubesprovis.Controllers
         [HttpPost("GetToken", Name = "GetToken")]
         public IActionResult GetToken([FromBody]Model.LoginModel login)
         {
-            IActionResult response = NotFound(login);
+            IActionResult response = Unauthorized();
             Model.RepoUserModel repoM = new Model.RepoUserModel();
             Model.RepoLoginmodel repoL = new Model.RepoLoginmodel();
 
