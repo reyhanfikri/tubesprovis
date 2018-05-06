@@ -4,6 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace tubesprovis.Controllers
 {
@@ -12,7 +18,7 @@ namespace tubesprovis.Controllers
     public class MovieController : Controller
     {
         // GET: api/DVD/getAllMovie
-        [HttpGet("getAllMovie")]
+        [HttpGet("getAllMovie"), Authorize]
         public IActionResult GetAllMovie()
         {
             var listmovie = new List<Model.tb_Movie.Movie_Class>();
@@ -37,7 +43,7 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/DVD/getAllNamaAndIDMovie
-        [HttpGet("getAllNamaAndIDMovie")]
+        [HttpGet("getAllNamaAndIDMovie"), Authorize]
         public IActionResult getAllNamaAndIDMovie()
         {
             var listmovie = new List<Model.tb_Movie.Movie_Class>();
@@ -62,7 +68,7 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/Movie/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public IActionResult Get(int id)
         {
             var value = new Model.tb_Movie.Movie_Class();
@@ -82,7 +88,7 @@ namespace tubesprovis.Controllers
         }
 
         // POST: api/Movie/insert
-        [HttpPost("Insert")]
+        [HttpPost("Insert"), Authorize]
         public IActionResult Post([FromBody]Model.tb_Movie.Movie_Class value)
         {
             var RP = new Model.tb_Movie.Movie_Repo();
@@ -99,7 +105,7 @@ namespace tubesprovis.Controllers
         }
 
         // PUT: api/Movie/5
-        [HttpPut("{id}/{newJudul}")]
+        [HttpPut("{id}/{newJudul}"), Authorize]
         public IActionResult Put(int Id, string Judul)
         {
             var RP = new Model.tb_Movie.Movie_Repo();
@@ -116,7 +122,7 @@ namespace tubesprovis.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize]
         public IActionResult Delete(int id)
         {
             var RP = new Model.tb_Movie.Movie_Repo();

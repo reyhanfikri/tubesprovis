@@ -12,7 +12,7 @@ namespace tubesprovis.Controllers
     public class DVDController : Controller
     {
         // GET: api/DVD/getAllDVD
-        [HttpGet("getAllDVD")]
+        [HttpGet("getAllDVD"), Authorize]
         public IActionResult GetAllDVD()
         {
             var listdvd = new List<Model.tb_DVD.DVD_Class>();
@@ -45,7 +45,7 @@ namespace tubesprovis.Controllers
         }
 
         // POST: api/DVD
-        [HttpPost("insert")]
+        [HttpPost("insert"), Authorize]
         public IActionResult Post([FromBody]Model.tb_DVD.DVD_Class value)
         {
             var RP = new Model.tb_DVD.DVD_Repo();
@@ -61,7 +61,7 @@ namespace tubesprovis.Controllers
             }
         }
         // PUT: api/DVD/5
-        [HttpPut("{id}/{stock_berkurang}")]
+        [HttpPut("{id}/{stock_berkurang}"), Authorize]
         public IActionResult Put(int id,int stock_berkurang)
         {
             var RP = new Model.tb_DVD.DVD_Repo();

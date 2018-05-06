@@ -12,7 +12,7 @@ namespace tubesprovis.Controllers
     public class KeranjangController : Controller
     {
         // GET: api/DVD/getAllKeranjang
-        [HttpGet("getAllKeranjang")]
+        [HttpGet("getAllKeranjang"), Authorize]
         public IActionResult GetAllKeranjang()
         {
             var listkeranjang = new List<Model.tb_Keranjang.Keranjang_Class>();
@@ -44,7 +44,7 @@ namespace tubesprovis.Controllers
         }
         
         // POST: api/Keranjang/insert
-        [HttpPost("insert")]
+        [HttpPost("insert"), Authorize]
         public IActionResult Post([FromBody]Model.tb_Keranjang.Keranjang_Class value)
         {
             var RP = new Model.tb_Keranjang.Keranjang_Repo();

@@ -12,7 +12,7 @@ namespace tubesprovis.Controllers
     public class GenreController : Controller
     {
         // GET: api/DVD/getAllGenre
-        [HttpGet("getAllGenre")]
+        [HttpGet("getAllGenre"), Authorize]
         public IActionResult GetAllGenre()
         {
             var listgenre = new List<Model.tb_Genre.Genre_Class>();
@@ -49,7 +49,7 @@ namespace tubesprovis.Controllers
         }
 
         // PUT: api/Genre/5
-        [HttpPut("{id}/{newGenre}")]
+        [HttpPut("{id}/{newGenre}"), Authorize]
         public IActionResult Put(int Id, string Genre)
         {
             var RP = new Model.tb_Genre.Genre_Repo();

@@ -12,7 +12,7 @@ namespace tubesprovis.Controllers
     public class GambarDVDController : Controller
     {
         // GET: api/GambarDVD/getAllCover
-        [HttpGet("getAllCover")]
+        [HttpGet("getAllCover"), Authorize]
         public IActionResult getAllCover()
         {
             var listcover = new List<Model.tb_Gambar_DVD.GambarDVD_Class>();
@@ -51,7 +51,7 @@ namespace tubesprovis.Controllers
         //}
 
         // POST: api/GambarDVD
-        [HttpPost("insert")]
+        [HttpPost("insert"), Authorize]
         public IActionResult Post([FromBody]Model.tb_Gambar_DVD.GambarDVD_Class value)
         {
             var RP = new Model.tb_Gambar_DVD.GambarDVD_Repo();
@@ -68,7 +68,7 @@ namespace tubesprovis.Controllers
         }
 
         // PUT: api/GambarDVD/5
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), Authorize]
         public IActionResult Put(int id, string gambar_sampul)
         {
             var RP = new Model.tb_Gambar_DVD.GambarDVD_Repo();

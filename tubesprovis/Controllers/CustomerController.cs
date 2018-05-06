@@ -18,7 +18,7 @@ namespace tubesprovis.Controllers
     public class CustomerController : Controller
     {
         // GET: api/Customer/getAllCustomer
-        [HttpGet("getAllCustomer"),Authorize]
+        [HttpGet("getAllCustomer"), Authorize]
         public IActionResult GetAllCustomer()
         {
             var listcustomer = new List<Model.tb_Customer.Cust_Class>();
@@ -42,7 +42,7 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/Customer/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public IActionResult Get(int id)
         {
             var value = new Model.tb_Customer.Cust_Class();
@@ -63,7 +63,7 @@ namespace tubesprovis.Controllers
         }
 
         // POST: api/Customer
-        [HttpPost("Insert")]
+        [HttpPost("Insert"), Authorize]
         public IActionResult Post([FromBody]Model.tb_Customer.Cust_Class value)
         {
             var RP = new Model.tb_Customer.Cust_Repo();
