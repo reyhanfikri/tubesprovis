@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2018 at 04:50 PM
+-- Generation Time: May 06, 2018 at 10:33 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -142,26 +142,26 @@ CREATE TABLE `tb_gambar_dvd` (
 --
 
 INSERT INTO `tb_gambar_dvd` (`id_gambar`, `id_dvd`, `url_gambar`) VALUES
-(1, 1, 'https://www.imdb.com/title/tt3501632/mediaviewer/rm1413491712'),
-(2, 2, 'https://www.imdb.com/title/tt0451279/mediaviewer/rm1404907776'),
-(3, 3, 'https://www.imdb.com/title/tt2380307/mediaviewer/rm585455872'),
-(4, 4, 'https://www.imdb.com/title/tt6294822/mediaviewer/rm268720128'),
-(5, 5, 'https://www.imdb.com/title/tt2771200/mediaviewer/rm2049982208'),
-(6, 6, 'https://www.imdb.com/title/tt1396484/mediaviewer/rm2985515264'),
-(7, 7, 'https://www.imdb.com/title/tt0167261/mediaviewer/rm3523884288'),
-(8, 8, 'https://www.imdb.com/title/tt0468569/mediaviewer/rm4023877632'),
-(9, 9, 'https://www.imdb.com/title/tt0264464/mediaviewer/rm3911489536'),
-(10, 10, 'https://www.imdb.com/title/tt0076759/mediaviewer/rm3263717120'),
-(11, 11, 'https://www.imdb.com/title/tt1375666/mediaviewer/rm3426651392'),
-(12, 12, 'https://www.imdb.com/title/tt0120338/mediaviewer/rm2647458304'),
-(13, 13, 'https://www.imdb.com/title/tt0266543/mediaviewer/rm943068416'),
-(14, 14, 'https://www.imdb.com/title/tt1301264/mediaviewer/rm1017374464'),
-(15, 15, 'https://www.imdb.com/title/tt2589132/mediaviewer/rm629872896'),
-(16, 16, 'https://www.imdb.com/title/tt1899353/mediaviewer/rm567291648'),
-(17, 17, 'https://www.imdb.com/title/tt2659414/mediaviewer/rm2548715008'),
-(18, 18, 'https://www.imdb.com/title/tt5700672/mediaviewer/rm310842624'),
-(19, 19, 'https://www.imdb.com/title/tt2967578/mediaviewer/rm3145996544'),
-(20, 20, 'https://www.imdb.com/title/tt1028532/mediaviewer/rm560010240');
+(1, 1, 'https://upload.wikimedia.org/wikipedia/id/b/be/Thor_Ragnarok_poster_2.jpg'),
+(2, 2, 'https://upload.wikimedia.org/wikipedia/id/e/ed/Wonder_Woman_%282017_film%29.jpg'),
+(3, 3, 'https://upload.wikimedia.org/wikipedia/id/d/d7/Coco_%282017_film%29_logo.jpg'),
+(4, 4, 'https://upload.wikimedia.org/wikipedia/id/7/7d/The_Post_Steven_Spielberg_Poster_2017.jpg'),
+(5, 5, 'https://upload.wikimedia.org/wikipedia/id/d/d6/Beauty_and_the_Beast_2017_poster.jpg'),
+(6, 6, 'https://upload.wikimedia.org/wikipedia/id/6/65/IT_Bill_Skarsgard_Poster_2017.jpg'),
+(7, 7, 'https://upload.wikimedia.org/wikipedia/id/2/2a/LOTRTTTmovie.jpg'),
+(8, 8, 'https://upload.wikimedia.org/wikipedia/id/8/8a/Dark_Knight.jpg'),
+(9, 9, 'https://upload.wikimedia.org/wikipedia/id/4/4d/Catch_Me_If_You_Can_2002_movie.jpg'),
+(10, 10, 'https://upload.wikimedia.org/wikipedia/id/8/87/StarWarsMoviePoster1977.jpg'),
+(11, 11, 'https://upload.wikimedia.org/wikipedia/id/9/91/Inception_poster.jpg'),
+(12, 12, 'https://upload.wikimedia.org/wikipedia/id/4/4b/Titanic_film.jpg'),
+(13, 13, 'https://upload.wikimedia.org/wikipedia/id/1/1c/Nemo-poster2.jpg'),
+(14, 14, 'https://upload.wikimedia.org/wikipedia/id/1/17/Laskar_Pelangi_film.jpg'),
+(15, 15, 'https://upload.wikimedia.org/wikipedia/id/7/74/Habibie_Ainun_Poster.jpg'),
+(16, 16, 'https://upload.wikimedia.org/wikipedia/id/e/ed/The_Raid_Poster.JPG'),
+(17, 17, 'https://upload.wikimedia.org/wikipedia/id/4/4c/Miracle_in_Cell_No_7_poster.jpg'),
+(18, 18, 'https://upload.wikimedia.org/wikipedia/id/9/95/Train_to_Busan.jpg'),
+(19, 19, 'https://upload.wikimedia.org/wikipedia/id/e/e3/Secretly_Greatly_poster.jpg'),
+(20, 20, 'https://upload.wikimedia.org/wikipedia/id/b/be/Hachi_poster.jpg');
 
 -- --------------------------------------------------------
 
