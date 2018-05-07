@@ -35,7 +35,7 @@ namespace tubesprovis.Controllers
 
             var user = repoM.Authenticate(login);
 
-            if (user != null)
+            if (user.Username != null)
             {
                 var tokenString = repoL.BuildToken(_config, user);
                 response = Ok(new { token = tokenString });
