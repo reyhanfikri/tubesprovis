@@ -97,5 +97,24 @@ namespace tubesprovis.Model.tb_DVD
             }
             
         }
+
+        public DVD_Class getById(int Id)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_dvd WHERE id_dvd = " + Id + ";";
+
+                OpenConnection();
+                DVD_Class hasil = myConn.Query<DVD_Class>(query, new { id_cust = Id }).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

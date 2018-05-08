@@ -43,11 +43,24 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/DVD/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id}"), Authorize]
+        public IActionResult Get(int id)
         {
+            var value = new Model.tb_DVD.DVD_Class();
+            var RP = new Model.tb_DVD.DVD_Repo();
 
-            return "value";
+            value = RP.getById(id);
+
+            if (value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
         }
 
         // POST: api/DVD

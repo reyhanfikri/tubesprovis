@@ -74,5 +74,24 @@ namespace tubesprovis.Model.tb_Genre
             {
             }
         }
+
+        public Genre_Class getById(int Id)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_genre WHERE id_genre = " + Id + ";";
+
+                OpenConnection();
+                Genre_Class hasil = myConn.Query<Genre_Class>(query, new { id_cust = Id }).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

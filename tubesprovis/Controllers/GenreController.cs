@@ -42,12 +42,26 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/Genre/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id}"), Authorize]
+        public IActionResult Get(int id)
         {
-            return "value";
+            var value = new Model.tb_Genre.Genre_Class();
+            var RP = new Model.tb_Genre.Genre_Repo();
+
+            value = RP.getById(id);
+
+            if (value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
         }
-        
+
         // POST: api/Genre
         [HttpPost]
         public void Post([FromBody]string value)

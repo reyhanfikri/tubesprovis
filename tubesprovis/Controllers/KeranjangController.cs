@@ -43,12 +43,26 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/Keranjang/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{id}"), Authorize]
+        public IActionResult Get(int id)
         {
-            return "value";
+            var value = new Model.tb_Keranjang.Keranjang_Class();
+            var RP = new Model.tb_Keranjang.Keranjang_Repo();
+
+            value = RP.getById(id);
+
+            if (value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
         }
-        
+
         // POST: api/Keranjang/insert
         [HttpPost("insert"), Authorize]
         public IActionResult Post([FromBody]Model.tb_Keranjang.Keranjang_Class value)
