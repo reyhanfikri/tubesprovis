@@ -98,6 +98,23 @@ namespace tubesprovis.Model.tb_Customer
                 throw ex;
             }
         }
+        public Cust_Class getByNama(String Nama)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_customer WHERE nama_cust = " + Nama + ";";
+
+                OpenConnection();
+                Cust_Class hasil = myConn.Query<Cust_Class>(query, new { nama_cust = Nama }).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }

@@ -61,6 +61,26 @@ namespace tubesprovis.Controllers
             
             
         }
+        // GET: api/Customer/Nama
+        [HttpGet("Nama/{Nama}",Name = "GetbyNama"), Authorize]
+        public IActionResult GetCustomerByNama(String Nama)
+        {
+            var value = new Model.tb_Customer.Cust_Class();
+            var RP = new Model.tb_Customer.Cust_Repo();
+
+            value = RP.getByNama(Nama);
+
+            if (value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+        }
 
         // POST: api/Customer
         [HttpPost("Insert"), Authorize]

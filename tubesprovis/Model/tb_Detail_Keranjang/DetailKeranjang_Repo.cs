@@ -100,6 +100,23 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
                 throw ex;
             }
         }
+        public DetailKeranjang_Class getByIdKeranjang(int Id)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_detail_keranjang WHERE id_Keranjang = " + Id + ";";
+
+                OpenConnection();
+                DetailKeranjang_Class hasil = myConn.Query<DetailKeranjang_Class>(query, new { id_keranjang = Id }).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }
