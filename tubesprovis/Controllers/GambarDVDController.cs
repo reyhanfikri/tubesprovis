@@ -43,13 +43,56 @@ namespace tubesprovis.Controllers
         }
 
         // GET: api/GambarDVD/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("gambar/{id}",Name ="Gambar")]
+        public IActionResult GetByGambar(int id)
         {
+            var cover = new Model.tb_Gambar_DVD.GambarDVD_Class();
+            var repositorycover = new Model.tb_Gambar_DVD.GambarDVD_Repo();
 
-            return "value";
+            try
+            {
+                cover = repositorycover.getCoverByIDGambar(id);
+            }
+            catch (Exception ex)
+            {
+            }
+
+            if (cover == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(cover);
+            }
+
         }
 
+        // GET: api/GambarDVD/5
+        [HttpGet("dvd/{id}",Name = "dvd")]
+        public IActionResult GetByDVD(int id)
+        {
+            var cover = new Model.tb_Gambar_DVD.GambarDVD_Class();
+            var repositorycover = new Model.tb_Gambar_DVD.GambarDVD_Repo();
+
+            try
+            {
+                cover = repositorycover.getCoverByIDDVD(id);
+            }
+            catch (Exception ex)
+            {
+            }
+
+            if (cover == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(cover);
+            }
+            
+        }
         // GET: GambarDVD/Create
         //public ActionResult Create()
         //{

@@ -88,6 +88,23 @@ namespace tubesprovis.Model.tb_Keranjang
                 throw ex;
             }
         }
+        public Keranjang_Class getByIdCust(int Id)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_keranjang WHERE id_customer = " + Id + ";";
+
+                OpenConnection();
+                Keranjang_Class hasil = myConn.Query<Keranjang_Class>(query, new { id_cust = Id }).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }

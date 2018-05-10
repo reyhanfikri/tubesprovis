@@ -61,6 +61,40 @@ namespace tubesprovis.Model.tb_Gambar_DVD
                 throw ex;
             }
         }
+        public GambarDVD_Class getCoverByIDGambar(int id)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_gambar_dvd where id_gambar='"+id+"'";
+
+                OpenConnection();
+                GambarDVD_Class hasil = myConn.Query<GambarDVD_Class>(query).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public GambarDVD_Class getCoverByIDDVD(int id)
+        {
+            try
+            {
+                string query = "SELECT * FROM tb_gambar_dvd id_dvd='" + id + "'";
+
+                OpenConnection();
+                GambarDVD_Class hasil = myConn.Query<GambarDVD_Class>(query).FirstOrDefault();
+                closeConnection();
+
+                return hasil;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public void insertNewCover(GambarDVD_Class cover)
         {

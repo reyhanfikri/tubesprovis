@@ -62,6 +62,26 @@ namespace tubesprovis.Controllers
 
 
         }
+        // GET: api/Keranjang/5
+        [HttpGet("Cust/{id}",Name ="ByCustomerID"), Authorize]
+        public IActionResult GetByidCust(int id)
+        {
+            var value = new Model.tb_Keranjang.Keranjang_Class();
+            var RP = new Model.tb_Keranjang.Keranjang_Repo();
+
+            value = RP.getByIdCust(id);
+
+            if (value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return NotFound();
+            }
+
+
+        }
 
         // POST: api/Keranjang/insert
         [HttpPost("insert"), Authorize]
