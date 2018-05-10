@@ -42,7 +42,7 @@ namespace tubesprovis.Controllers
             }
         }
 
-        // GET: api/GambarDVD/5
+        // GET: api/GambarDVD/gambar/5
         [HttpGet("gambar/{id}",Name ="Gambar")]
         public IActionResult GetByGambar(int id)
         {
@@ -68,7 +68,7 @@ namespace tubesprovis.Controllers
 
         }
 
-        // GET: api/GambarDVD/5
+        // GET: api/GambarDVD/dvd/5
         [HttpGet("dvd/{id}",Name = "dvd")]
         public IActionResult GetByDVD(int id)
         {

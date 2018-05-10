@@ -65,10 +65,10 @@ namespace tubesprovis.Model.tb_Gambar_DVD
         {
             try
             {
-                string query = "SELECT * FROM tb_gambar_dvd where id_gambar='"+id+"'";
+                string query = "SELECT * FROM tb_gambar_dvd where id_gambar="+id+"";
 
                 OpenConnection();
-                GambarDVD_Class hasil = myConn.Query<GambarDVD_Class>(query).FirstOrDefault();
+                GambarDVD_Class hasil = myConn.Query<GambarDVD_Class>(query, new { id_gambar = id }).FirstOrDefault();
                 closeConnection();
 
                 return hasil;
@@ -82,10 +82,10 @@ namespace tubesprovis.Model.tb_Gambar_DVD
         {
             try
             {
-                string query = "SELECT * FROM tb_gambar_dvd id_dvd='" + id + "'";
+                string query = "SELECT * FROM tb_gambar_dvd where id_dvd=" + id + "";
 
                 OpenConnection();
-                GambarDVD_Class hasil = myConn.Query<GambarDVD_Class>(query).FirstOrDefault();
+                GambarDVD_Class hasil = myConn.Query<GambarDVD_Class>(query, new { id_dvd = id }).FirstOrDefault();
                 closeConnection();
 
                 return hasil;

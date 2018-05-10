@@ -78,7 +78,7 @@ namespace tubesprovis.Model.tb_Keranjang
                 string query = "SELECT * FROM tb_keranjang WHERE id_keranjang = " + Id + ";";
 
                 OpenConnection();
-                Keranjang_Class hasil = myConn.Query<Keranjang_Class>(query, new { id_cust = Id }).FirstOrDefault();
+                Keranjang_Class hasil = myConn.Query<Keranjang_Class>(query, new { id_keranjang = Id }).FirstOrDefault();
                 closeConnection();
 
                 return hasil;
@@ -92,7 +92,7 @@ namespace tubesprovis.Model.tb_Keranjang
         {
             try
             {
-                string query = "SELECT * FROM tb_keranjang WHERE id_customer = " + Id + ";";
+                string query = "SELECT * FROM tb_keranjang WHERE id_cust = " + Id + ";";
 
                 OpenConnection();
                 Keranjang_Class hasil = myConn.Query<Keranjang_Class>(query, new { id_cust = Id }).FirstOrDefault();
