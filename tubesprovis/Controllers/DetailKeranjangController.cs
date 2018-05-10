@@ -67,7 +67,7 @@ namespace tubesprovis.Controllers
         [HttpGet("{id}",Name = "Keranjang"), Authorize]
         public IActionResult GetDetailKeranjangByIDKrj(int id)
         {
-            var value = new Model.tb_Detail_Keranjang.DetailKeranjang_Class();
+            List<Model.tb_Detail_Keranjang.DetailKeranjang_Class> value = new List<Model.tb_Detail_Keranjang.DetailKeranjang_Class>();
             var RP = new Model.tb_Detail_Keranjang.DetailKeranjang_Repo();
 
             value = RP.getByIdKeranjang(id);
