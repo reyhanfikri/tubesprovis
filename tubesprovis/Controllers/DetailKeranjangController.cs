@@ -64,7 +64,7 @@ namespace tubesprovis.Controllers
 
 
         }
-        [HttpGet("{id}",Name = "Keranjang"), Authorize]
+        [HttpGet("Keranjang/{id}",Name = "Keranjang"), Authorize]
         public IActionResult GetDetailKeranjangByIDKrj(int id)
         {
             List<Model.tb_Detail_Keranjang.DetailKeranjang_Class> value = new List<Model.tb_Detail_Keranjang.DetailKeranjang_Class>();

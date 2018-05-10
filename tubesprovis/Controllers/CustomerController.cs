@@ -61,24 +61,82 @@ namespace tubesprovis.Controllers
             
             
         }
-        // GET: api/Customer/Nama
-        [HttpGet("Nama/{Nama}",Name = "GetbyNama"), Authorize]
-        public IActionResult GetCustomerByNama(String Nama)
+        //// GET: api/Customer/Nama
+        //[HttpGet("Nama/{Nama}",Name = "GetbyNama"), Authorize]
+        //public IActionResult GetCustomerByNama(String Nama)
+        //{
+        //    try
+        //    {
+        //        char[] Input = new char[Nama.Length];
+
+        //        int i;
+        //        for ( i = 0; i < Nama.Length; i++)
+        //        {
+
+
+        //            if (Nama[i] == '_')
+        //            {
+        //                Input[i] = ' ';
+        //            }
+        //            else
+        //            {
+        //                Input[i] = Nama[i];
+        //            }
+        //        }
+        //        Input[i] = '\0';
+
+        //        var value = new Model.tb_Customer.Cust_Class();
+        //        var RP = new Model.tb_Customer.Cust_Repo();
+        //        String input = new string(Input);
+        //        value = RP.getByNama(input);
+
+        //        if (value != null)
+        //        {
+        //            return Ok(value);
+        //        }
+        //        else
+        //        {
+        //            return Ok(input);
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+
+        //    return BadRequest();
+
+        //}
+
+        // GET: api/Customer/Username
+        [HttpGet("Username/{Username}", Name = "GetbyNama"), Authorize]
+        public IActionResult GetCustomerByNama(String Username)
         {
-            var value = new Model.tb_Customer.Cust_Class();
-            var RP = new Model.tb_Customer.Cust_Repo();
-
-            value = RP.getByNama(Nama);
-
-            if (value != null)
+            try
             {
-                return Ok(value);
+                
+                var value = new Model.tb_Customer.Cust_Class();
+                var RP = new Model.tb_Customer.Cust_Repo();
+                
+                value = RP.getByUsername(Username);
+
+                if (value != null)
+                {
+                    return Ok(value);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
-            else
+            catch (Exception)
             {
-                return NotFound();
+
+                throw;
             }
 
+            return BadRequest();
 
         }
 
