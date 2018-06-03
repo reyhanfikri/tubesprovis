@@ -41,11 +41,14 @@ namespace tubesprovis.Model
             }
         }
 
-        public List<Beranda> Get()
+        public List<Beranda> GetBerandaByID(int id)
         {
             List<Beranda> values = new List<Beranda>();
           
-            string query = "SELECT tb_gambar_dvd.url_gambar, tb_movie.judul, tb_dvd.harga_display FROM tb_gambar_dvd INNER JOIN tb_dvd ON tb_gambar_dvd.id_movie = tb_dvd.id_movie INNER JOIN tb_movie ON tb_movie.id_movie = tb_dvd.id_movie group by tb_dvd.id_movie";
+            string query = "SELECT tb_gambar_dvd.url_gambar, tb_movie.judul, tb_dvd.harga_display " +
+                "FROM tb_gambar_dvd INNER JOIN tb_dvd ON tb_gambar_dvd.id_movie = tb_dvd.id_movie" +
+                "WHERE tb_gambar.id_gambar = " + id + "tb_movie.id_movie="+id+"tb_dvd.id_dvd="+id+  
+                "INNER JOIN tb_movie ON tb_movie.id_movie = tb_dvd.id_movie group by tb_dvd.id_movie";
 
             MySqlCommand command = new MySqlCommand(query,myConn);
             OpenConnection();
