@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2018 at 10:33 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Generation Time: Jun 03, 2018 at 02:29 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -134,6 +136,7 @@ INSERT INTO `tb_dvd` (`id_dvd`, `id_movie`, `stock`, `harga_display`) VALUES
 CREATE TABLE `tb_gambar_dvd` (
   `id_gambar` int(11) NOT NULL COMMENT 'id primary key untuk tabel tb_gambar_dvd',
   `id_dvd` int(11) NOT NULL COMMENT 'menghubungkan data yang ada di tabel tb_dvd',
+  `id_movie` int(11) NOT NULL,
   `url_gambar` varchar(200) NOT NULL COMMENT 'url gambar dvd'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -141,27 +144,27 @@ CREATE TABLE `tb_gambar_dvd` (
 -- Dumping data for table `tb_gambar_dvd`
 --
 
-INSERT INTO `tb_gambar_dvd` (`id_gambar`, `id_dvd`, `url_gambar`) VALUES
-(1, 1, 'https://upload.wikimedia.org/wikipedia/id/b/be/Thor_Ragnarok_poster_2.jpg'),
-(2, 2, 'https://upload.wikimedia.org/wikipedia/id/e/ed/Wonder_Woman_%282017_film%29.jpg'),
-(3, 3, 'https://upload.wikimedia.org/wikipedia/id/d/d7/Coco_%282017_film%29_logo.jpg'),
-(4, 4, 'https://upload.wikimedia.org/wikipedia/id/7/7d/The_Post_Steven_Spielberg_Poster_2017.jpg'),
-(5, 5, 'https://upload.wikimedia.org/wikipedia/id/d/d6/Beauty_and_the_Beast_2017_poster.jpg'),
-(6, 6, 'https://upload.wikimedia.org/wikipedia/id/6/65/IT_Bill_Skarsgard_Poster_2017.jpg'),
-(7, 7, 'https://upload.wikimedia.org/wikipedia/id/2/2a/LOTRTTTmovie.jpg'),
-(8, 8, 'https://upload.wikimedia.org/wikipedia/id/8/8a/Dark_Knight.jpg'),
-(9, 9, 'https://upload.wikimedia.org/wikipedia/id/4/4d/Catch_Me_If_You_Can_2002_movie.jpg'),
-(10, 10, 'https://upload.wikimedia.org/wikipedia/id/8/87/StarWarsMoviePoster1977.jpg'),
-(11, 11, 'https://upload.wikimedia.org/wikipedia/id/9/91/Inception_poster.jpg'),
-(12, 12, 'https://upload.wikimedia.org/wikipedia/id/4/4b/Titanic_film.jpg'),
-(13, 13, 'https://upload.wikimedia.org/wikipedia/id/1/1c/Nemo-poster2.jpg'),
-(14, 14, 'https://upload.wikimedia.org/wikipedia/id/1/17/Laskar_Pelangi_film.jpg'),
-(15, 15, 'https://upload.wikimedia.org/wikipedia/id/7/74/Habibie_Ainun_Poster.jpg'),
-(16, 16, 'https://upload.wikimedia.org/wikipedia/id/e/ed/The_Raid_Poster.JPG'),
-(17, 17, 'https://upload.wikimedia.org/wikipedia/id/4/4c/Miracle_in_Cell_No_7_poster.jpg'),
-(18, 18, 'https://upload.wikimedia.org/wikipedia/id/9/95/Train_to_Busan.jpg'),
-(19, 19, 'https://upload.wikimedia.org/wikipedia/id/e/e3/Secretly_Greatly_poster.jpg'),
-(20, 20, 'https://upload.wikimedia.org/wikipedia/id/b/be/Hachi_poster.jpg');
+INSERT INTO `tb_gambar_dvd` (`id_gambar`, `id_dvd`, `id_movie`, `url_gambar`) VALUES
+(1, 1, 1, 'https://upload.wikimedia.org/wikipedia/id/b/be/Thor_Ragnarok_poster_2.jpg'),
+(2, 2, 2, 'https://upload.wikimedia.org/wikipedia/id/e/ed/Wonder_Woman_%282017_film%29.jpg'),
+(3, 3, 3, 'https://upload.wikimedia.org/wikipedia/id/d/d7/Coco_%282017_film%29_logo.jpg'),
+(4, 4, 4, 'https://upload.wikimedia.org/wikipedia/id/7/7d/The_Post_Steven_Spielberg_Poster_2017.jpg'),
+(5, 5, 5, 'https://upload.wikimedia.org/wikipedia/id/d/d6/Beauty_and_the_Beast_2017_poster.jpg'),
+(6, 6, 6, 'https://upload.wikimedia.org/wikipedia/id/6/65/IT_Bill_Skarsgard_Poster_2017.jpg'),
+(7, 7, 7, 'https://upload.wikimedia.org/wikipedia/id/2/2a/LOTRTTTmovie.jpg'),
+(8, 8, 8, 'https://upload.wikimedia.org/wikipedia/id/8/8a/Dark_Knight.jpg'),
+(9, 9, 9, 'https://upload.wikimedia.org/wikipedia/id/4/4d/Catch_Me_If_You_Can_2002_movie.jpg'),
+(10, 10, 10, 'https://upload.wikimedia.org/wikipedia/id/8/87/StarWarsMoviePoster1977.jpg'),
+(11, 11, 11, 'https://upload.wikimedia.org/wikipedia/id/9/91/Inception_poster.jpg'),
+(12, 12, 12, 'https://upload.wikimedia.org/wikipedia/id/4/4b/Titanic_film.jpg'),
+(13, 13, 13, 'https://upload.wikimedia.org/wikipedia/id/1/1c/Nemo-poster2.jpg'),
+(14, 14, 14, 'https://upload.wikimedia.org/wikipedia/id/1/17/Laskar_Pelangi_film.jpg'),
+(15, 15, 15, 'https://upload.wikimedia.org/wikipedia/id/7/74/Habibie_Ainun_Poster.jpg'),
+(16, 16, 16, 'https://upload.wikimedia.org/wikipedia/id/e/ed/The_Raid_Poster.JPG'),
+(17, 17, 17, 'https://upload.wikimedia.org/wikipedia/id/4/4c/Miracle_in_Cell_No_7_poster.jpg'),
+(18, 18, 18, 'https://upload.wikimedia.org/wikipedia/id/9/95/Train_to_Busan.jpg'),
+(19, 19, 19, 'https://upload.wikimedia.org/wikipedia/id/e/e3/Secretly_Greatly_poster.jpg'),
+(20, 20, 20, 'https://upload.wikimedia.org/wikipedia/id/b/be/Hachi_poster.jpg');
 
 -- --------------------------------------------------------
 
@@ -330,36 +333,43 @@ ALTER TABLE `tb_movie`
 --
 ALTER TABLE `tb_customer`
   MODIFY `id_cust` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id primary key untuk tabel tb_customer', AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `tb_detail_keranjang`
 --
 ALTER TABLE `tb_detail_keranjang`
   MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id primary key untuk tabel tb_detail_keranjang', AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT for table `tb_dvd`
 --
 ALTER TABLE `tb_dvd`
   MODIFY `id_dvd` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id primary key untuk tabel tb_dvd', AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `tb_gambar_dvd`
 --
 ALTER TABLE `tb_gambar_dvd`
   MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id primary key untuk tabel tb_gambar_dvd', AUTO_INCREMENT=21;
+
 --
 -- AUTO_INCREMENT for table `tb_genre`
 --
 ALTER TABLE `tb_genre`
   MODIFY `id_genre` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id primary key untuk tabel tb_genre', AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT for table `tb_keranjang`
 --
 ALTER TABLE `tb_keranjang`
   MODIFY `id_keranjang` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id primary key untuk tabel tb_keranjang', AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT for table `tb_movie`
 --
 ALTER TABLE `tb_movie`
   MODIFY `id_movie` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id primary key untuk tabel tb_movie', AUTO_INCREMENT=21;
+
 --
 -- Constraints for dumped tables
 --
@@ -388,6 +398,7 @@ ALTER TABLE `tb_keranjang`
 --
 ALTER TABLE `tb_movie`
   ADD CONSTRAINT `tb_movie_ibfk_1` FOREIGN KEY (`id_genre`) REFERENCES `tb_genre` (`id_genre`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
