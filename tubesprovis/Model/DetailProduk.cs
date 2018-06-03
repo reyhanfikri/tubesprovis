@@ -9,7 +9,6 @@ namespace tubesprovis.Model
     {
        
         private String judul;
-        private String url_gambar;
         private String tahun_produksi;
         private int durasi;
         private String rating_IMDB;
@@ -19,7 +18,6 @@ namespace tubesprovis.Model
         private int harga_display;
 
         public string Judul { get => judul; set => judul = value; }
-        public string Url_gambar { get => url_gambar; set => url_gambar = value; }
         public string Tahun_produksi { get => tahun_produksi; set => tahun_produksi = value; }
         public int Durasi { get => durasi; set => durasi = value; }
         public string Rating_IMDB { get => rating_IMDB; set => rating_IMDB = value; }

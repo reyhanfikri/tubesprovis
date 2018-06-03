@@ -42,6 +42,30 @@ namespace tubesprovis.Controllers
                 return Unauthorized();
             }
         }
+        // GET: api/Servis
+        [HttpGet("GetDetail/{id}", Name = "GetDetail")]
+        public IActionResult GetAy(int id)
+        {
+            var value = new List<Model.DetailProduk>();
+            var RP = new Model.DetailProduk_Repo();
+            try
+            {
+                value = RP.Get(id);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            if (value != null)
+            {
+                return Ok(value);
+            }
+            else
+            {
+                return Unauthorized();
+            }
+        }
 
         // GET: api/Servis/5
         [HttpGet("{id}", Name = "Get")]
