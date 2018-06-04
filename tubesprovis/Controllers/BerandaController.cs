@@ -15,7 +15,7 @@ using System.Text;
 namespace tubesprovis.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Beranda")]
+    [Route("api/DVD")]
     public class BerandaController : Controller
     {
         
