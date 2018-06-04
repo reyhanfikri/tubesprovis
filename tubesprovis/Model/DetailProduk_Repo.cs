@@ -45,7 +45,7 @@ namespace tubesprovis.Model
         {
             List<DetailProduk> values = new List<DetailProduk>();
 
-            string query = "SELECT tb_movie.judul, tb_movie.tahun_produksi, tb_movie.durasi,tb_movie.rating_IMDB, tb_movie.rated, tb_movie.bahasa,tb_movie.subtitle ,tb_dvd.harga_display FROM tb_movie INNER JOIN tb_dvd on tb_movie.id_movie = tb_dvd.id_movie where tb_movie.id_movie ="+ID+" group by tb_movie.id_movie; ";
+            string query = "SELECT tb_dvd.id_dvd, tb_movie.judul, tb_movie.tahun_produksi, tb_movie.durasi,tb_movie.rating_IMDB, tb_movie.rated, tb_movie.bahasa,tb_movie.subtitle ,tb_dvd.harga_display, tb_gambar_dvd.url_gambar FROM tb_movie INNER JOIN tb_gambar_dvd ON tb_movie.id_movie = tb_gambar_dvd.id_movie INNER JOIN tb_dvd on tb_movie.id_movie = tb_dvd.id_movie where tb_movie.id_movie ="+ID+" group by tb_movie.id_movie; ";
 
             MySqlCommand command = new MySqlCommand(query, myConn);
             OpenConnection();
@@ -59,10 +59,10 @@ namespace tubesprovis.Model
                     while (reader.Read())
                     {
 
-                        values.Add(new DetailProduk { Judul = reader.GetString(0),Tahun_produksi = reader.GetString(1),
-                            Durasi = reader.GetInt32(2),Rating_IMDB = reader.GetDecimal(3).ToString(),
-                            Bahasa = reader.GetString(4),Rated = reader.GetString(5),
-                            Subtitle = reader.GetString(6),Harga_display = reader.GetInt32(7) });
+                        values.Add(new DetailProduk { Id_dvd = reader.GetInt32(0), Judul = reader.GetString(1),Tahun_produksi = reader.GetString(2),
+                            Durasi = reader.GetInt32(3),Rating_IMDB = reader.GetDecimal(4).ToString(),
+                            Bahasa = reader.GetString(5),Rated = reader.GetString(6),
+                            Subtitle = reader.GetString(7),Harga_display = reader.GetInt32(8), Url_gambar = reader.GetString(9) });
 
                     }
 

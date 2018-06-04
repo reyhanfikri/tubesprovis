@@ -19,7 +19,7 @@ namespace tubesprovis.Controllers
     public class ServisController : Controller
     {
         // GET: api/Servis
-        [HttpGet("GetBeranda",Name = "GEtberanda")]
+        [HttpGet("GetBeranda",Name = "GEtberanda"), Authorize]
         public IActionResult GetUy()
         {
             var value = new List<Model.Beranda>();
@@ -43,7 +43,7 @@ namespace tubesprovis.Controllers
             }
         }
         // GET: api/Servis
-        [HttpGet("GetDetail/{id}", Name = "GetDetail")]
+        [HttpGet("GetDetail/{id}", Name = "GetDetail"), Authorize]
         public IActionResult GetAy(int id)
         {
             var value = new List<Model.DetailProduk>();
@@ -59,7 +59,7 @@ namespace tubesprovis.Controllers
 
             if (value != null)
             {
-                return Ok(value);
+                return Ok(value.ElementAt(0));
             }
             else
             {
