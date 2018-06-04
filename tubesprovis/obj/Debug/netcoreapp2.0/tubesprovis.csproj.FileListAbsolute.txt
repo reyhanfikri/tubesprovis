@@ -20,14 +20,3 @@ C:\Users\agungd\Documents\Visual Studio 2017\tubesprovis\tubesprovis\obj\Debug\n
 C:\Users\agungd\Documents\Visual Studio 2017\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.AssemblyInfo.cs
 C:\Users\agungd\Documents\Visual Studio 2017\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.dll
 C:\Users\agungd\Documents\Visual Studio 2017\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.pdb
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.deps.json
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.runtimeconfig.json
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.runtimeconfig.dev.json
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.dll
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\bin\Debug\netcoreapp2.0\tubesprovis.pdb
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.csprojResolveAssemblyReference.cache
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.csproj.CoreCompileInputs.cache
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.AssemblyInfoInputs.cache
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.AssemblyInfo.cs
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.dll
-C:\Users\rsysw\Documents\GitHub\tubesprovis\tubesprovis\obj\Debug\netcoreapp2.0\tubesprovis.pdb
