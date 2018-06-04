@@ -45,7 +45,7 @@ namespace tubesprovis.Model
         {
             List<Beranda> values = new List<Beranda>();
           
-            string query = "SELECT tb_gambar_dvd.url_gambar, tb_movie.judul, tb_dvd.harga_display FROM tb_gambar_dvd INNER JOIN tb_dvd ON tb_gambar_dvd.id_movie = tb_dvd.id_movie INNER JOIN tb_movie ON tb_movie.id_movie = tb_dvd.id_movie group by tb_dvd.id_movie";
+            string query = "SELECT tb_movie.id_movie, tb_gambar_dvd.url_gambar, tb_movie.judul, tb_dvd.harga_display FROM tb_gambar_dvd INNER JOIN tb_dvd ON tb_gambar_dvd.id_movie = tb_dvd.id_movie INNER JOIN tb_movie ON tb_movie.id_movie = tb_dvd.id_movie group by tb_dvd.id_movie";
 
             MySqlCommand command = new MySqlCommand(query,myConn);
             OpenConnection();
@@ -59,7 +59,7 @@ namespace tubesprovis.Model
                     while (reader.Read())
                     {
             
-                        values.Add(new Beranda { Url_gambar = reader.GetString(0), Judul = reader.GetString(1), Harga_display = reader.GetInt32(2) });
+                        values.Add(new Beranda { Id_movie = reader.GetInt32(0), Url_gambar = reader.GetString(1), Judul = reader.GetString(2), Harga_display = reader.GetInt32(3) });
        
                     }
                     
