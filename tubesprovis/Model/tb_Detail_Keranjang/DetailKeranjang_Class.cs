@@ -10,6 +10,8 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
         private int id_detail;
         private int id_keranjang;
         private int id_dvd;
+        private String url_gambar;
+        private String judul;
         private int qty;
         private int harga_jual;
         private int total_harga;
@@ -25,5 +27,7 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
         public int Qty { get => qty; set => qty = value; }
         public int Harga_jual { get => harga_jual; set => harga_jual = value; }
         public int Total_harga { get => total_harga; set => total_harga = value; }
+        public string Url_gambar { get => url_gambar; set => url_gambar = value; }
+        public string Judul { get => judul; set => judul = value; }
     }
 }
