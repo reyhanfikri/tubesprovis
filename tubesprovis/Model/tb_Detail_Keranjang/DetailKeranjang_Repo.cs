@@ -108,7 +108,7 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
                     "INNER JOIN tb_detail_keranjang ON tb_gambar_dvd.id_dvd = tb_detail_keranjang.id_dvd " +
                     "INNER JOIN  tb_movie ON tb_gambar_dvd.id_movie = tb_movie.id_movie " +
                     "where tb_detail_keranjang.id_detail = 1 " +
-                    "GROUP BY tb_detail_keranjang.id_detail ORDER BY tb_detail_keranjang.id_dvd;";
+                    "ORDER BY tb_detail_keranjang.id_dvd;";
 
                 OpenConnection();
                 List<DetailKeranjang_Class> hasil = myConn.Query<DetailKeranjang_Class>(query, new { id_keranjang = Id }).ToList();
