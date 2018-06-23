@@ -104,11 +104,7 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
         {
             try
             {
-                string query = "SELECT tb_gambar_dvd.url_gambar, tb_movie.judul , tb_detail_keranjang.qty, tb_detail_keranjang.harga_jual, tb_detail_keranjang.total_harga FROM tb_gambar_dvd " +
-                    "INNER JOIN tb_detail_keranjang ON tb_gambar_dvd.id_dvd = tb_detail_keranjang.id_dvd " +
-                    "INNER JOIN  tb_movie ON tb_gambar_dvd.id_movie = tb_movie.id_movie " +
-                    "where tb_detail_keranjang.id_detail = 1 " +
-                    "ORDER BY tb_detail_keranjang.id_dvd;";
+                string query = "SELECT * FROM tb_detail_keranjang WHERE id_Keranjang = " + Id + ";";
 
                 OpenConnection();
                 List<DetailKeranjang_Class> hasil = myConn.Query<DetailKeranjang_Class>(query, new { id_keranjang = Id }).ToList();
