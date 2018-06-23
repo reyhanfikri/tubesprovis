@@ -8,8 +8,8 @@ namespace tubesprovis.Model.tb_dictionary
     public class Dictionary_class
     {
     	private int id_dictionary;
-        private string nama_class;
-        private string atribut_class;
+        private string nama_tabel;
+        private string atribut_tabel;
 
         public Dictionary_class()
         {
@@ -17,7 +17,7 @@ namespace tubesprovis.Model.tb_dictionary
         }
 
         public int Id_dictionary { get => id_dictionary; set => id_dictionary = value; }
-        public string Nama_class { get => nama_class; set => nama_class = value; }
-        public string Atribut_class { get => atribut_class; set => atribut_class = value; }
+        public string Nama_tabel { get => nama_tabel; set => nama_tabel = value; }
+        public string Atribut_tabel { get => atribut_tabel; set => atribut_tabel = value; }
     }
 }
