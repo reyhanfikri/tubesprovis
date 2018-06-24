@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Dapper;
 
-namespace tubesprovis.Model.tb_Isi_Keranjang
+namespace tubesprovis.Model
 {
     public class IsiKeranjang_Repo
     {

@@ -28,8 +28,8 @@ namespace tubesprovis.Controllers
         [HttpGet("Isi/{id}", Name = "IsiKeranjang")]
         public IActionResult GetIsiKeranjangByIDCust(int id)
         {
-            List<Model.tb_Isi_Keranjang.IsiKeranjang_Class> value = new List<Model.tb_Isi_Keranjang.IsiKeranjang_Class>();
-            var RP = new Model.tb_Isi_Keranjang.IsiKeranjang_Repo();
+            List<Model.IsiKeranjang_Class> value = new List<Model.IsiKeranjang_Class>();
+            var RP = new Model.IsiKeranjang_Repo();
 
             value = RP.getIsiKeranjang(id);
 

@@ -92,7 +92,7 @@ namespace tubesprovis.Model.tb_Keranjang
         {
             try
             {
-                string query = "SELECT * FROM tb_keranjang WHERE id_cust = " + Id + ";";
+                string query = "SELECT id_keranjang FROM tb_keranjang where tb_keranjang.id_cust = " + Id + " ORDER BY id_keranjang DESC Limit 1;";
 
                 OpenConnection();
                 Keranjang_Class hasil = myConn.Query<Keranjang_Class>(query, new { id_cust = Id }).FirstOrDefault();
