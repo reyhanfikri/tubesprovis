@@ -60,5 +60,25 @@ namespace tubesprovis.Model.tb_dictionary
             }
         }
 
+
+
+
+        public void DeleteDictionary(int id_dictionary)
+        {
+            try
+            {
+
+                string query = "DELETE FROM tb_dictionary WHERE id_dictionary = " + id_dictionary + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

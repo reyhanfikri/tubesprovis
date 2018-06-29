@@ -116,5 +116,22 @@ namespace tubesprovis.Model.tb_DVD
             }
         }
 
+        public void DeleteDVD(int id_dvd)
+        {
+            try
+            {
+
+                string query = "DELETE FROM tb_dvd WHERE id_dvd = " + id_dvd + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

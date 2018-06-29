@@ -121,20 +121,25 @@ namespace tubesprovis.Controllers
             }
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}"), Authorize]
+        // DELETE: api/Movie/Delete/5
+        [HttpDelete("Delete/{id}"), Authorize]
         public IActionResult Delete(int id)
         {
-            var RP = new Model.tb_Movie.Movie_Repo();
 
-            try
+
+            var RP = new Model.tb_Movie.Movie_Repo();
+            var value = new Model.tb_Movie.Movie_Class();
+
+
+            if (RP.getById(id) != null)
             {
+
                 RP.deleteMovieById(id);
-                return Ok();
+                return Ok("ID Terhapus");
             }
-            catch (Exception e)
+            else
             {
-                return BadRequest();
+                return NotFound();
             }
         }
     }

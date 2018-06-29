@@ -93,5 +93,22 @@ namespace tubesprovis.Model.tb_Genre
             }
         }
 
+        public void DeleteGenre(int id_genre)
+        {
+            try
+            {
+
+                string query = "DELETE FROM tb_genre WHERE id_genre = " + id_genre + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

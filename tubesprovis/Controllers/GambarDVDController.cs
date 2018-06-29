@@ -133,10 +133,26 @@ namespace tubesprovis.Controllers
             }
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE: api/GambarDVD/Delete/5
+        [HttpDelete("Delete/{id}"), Authorize]
+        public IActionResult Delete(int id)
         {
+
+
+            var RP = new Model.tb_Gambar_DVD.GambarDVD_Repo();
+            var value = new Model.tb_Gambar_DVD.GambarDVD_Repo();
+
+
+            if (RP.getCoverByIDDVD(id) != null)
+            {
+
+                RP.deleteCoverById(id);
+                return Ok("ID Terhapus");
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

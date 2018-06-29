@@ -128,7 +128,7 @@ namespace tubesprovis.Model.tb_Gambar_DVD
         {
             try
             {
-                string query = "DELETE FROM tb_gambar_dvd WHERE id = " + Id + ";";
+                string query = "DELETE FROM tb_gambar_dvd WHERE id_gambar = " + Id + ";";
 
                 OpenConnection();
                 var hasil = myConn.Execute(query);
@@ -151,5 +151,7 @@ namespace tubesprovis.Model.tb_Gambar_DVD
             var hasil = myConn.Execute(query);
             closeConnection();
         }
+
+        
     }
 }

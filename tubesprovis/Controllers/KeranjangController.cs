@@ -105,11 +105,27 @@ namespace tubesprovis.Controllers
         public void Put(int id, [FromBody]string value)
         {
         }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+
+        // DELETE: api/Keranjang/Delete/5
+        [HttpDelete("Delete/{id}"), Authorize]
+        public IActionResult Delete(int id)
         {
+
+
+            var RP = new Model.tb_Keranjang.Keranjang_Repo();
+            var value = new Model.tb_Keranjang.Keranjang_Class();
+
+
+            if (RP.getById(id) != null)
+            {
+
+                RP.DeleteKeranjang(id);
+                return Ok("ID Terhapus");
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

@@ -118,5 +118,23 @@ namespace tubesprovis.Model.tb_Detail_Keranjang
             }
         }
 
+        public void DeleteDetailKeranjang(int id_detail)
+        {
+            try
+            {
+
+                string query = "DELETE FROM tb_detail_keranjang WHERE id_detail = " + id_detail + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

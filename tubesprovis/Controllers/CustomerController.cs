@@ -136,7 +136,7 @@ namespace tubesprovis.Controllers
                 throw;
             }
 
-            return BadRequest();
+            
 
         }
 
@@ -162,11 +162,27 @@ namespace tubesprovis.Controllers
         public void Put(int id, [FromBody]string value)
         {
         }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+
+        // DELETE: api/Customer/Delete/5
+        [HttpDelete("Delete/{id}"), Authorize]
+        public IActionResult Delete(int id)
         {
+
+
+            var RP = new Model.tb_Customer.Cust_Repo();
+            var value = new Model.tb_Customer.Cust_Class();
+
+
+            if (RP.getById(id) != null)
+            {
+
+                RP.DeleteCustomer(id);
+                return Ok("ID Terhapus");
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

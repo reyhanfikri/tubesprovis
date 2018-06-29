@@ -85,10 +85,26 @@ namespace tubesprovis.Controllers
             }
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE: api/Genre/Delete/5
+        [HttpDelete("Delete/{id}"), Authorize]
+        public IActionResult Delete(int id)
         {
+
+
+            var RP = new Model.tb_Genre.Genre_Repo();
+            var value = new Model.tb_Genre.Genre_Class();
+
+
+            if (RP.getById(id) != null)
+            {
+
+                RP.DeleteGenre(id);
+                return Ok("ID Terhapus");
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

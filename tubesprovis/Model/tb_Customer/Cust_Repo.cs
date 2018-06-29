@@ -116,5 +116,22 @@ namespace tubesprovis.Model.tb_Customer
             }
         }
 
+        public void DeleteCustomer(int id_customer)
+        {
+            try
+            {
+
+                string query = "DELETE FROM tb_customer WHERE id_cust = " + id_customer + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

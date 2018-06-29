@@ -153,5 +153,22 @@ namespace tubesprovis.Model.tb_Movie
             {
             }
         }
+
+        public void DeleteMovie(int id_movie)
+        {
+            try
+            {
+
+                string query = "DELETE FROM tb_movie WHERE id_movie = " + id_movie + ";";
+
+                OpenConnection();
+                var hasil = myConn.Execute(query);
+                closeConnection();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
