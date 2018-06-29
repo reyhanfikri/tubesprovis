@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.lock
+.suo
+tubesprovis.csproj.CoreCompileInputs.cache
+storage.ide-shm
+storage.ide-wal
+tubesprovis.csproj.nuget.cache
+tubesprovis.csproj.nuget.g.props
+tubesprovis.csproj.nuget.g.targets
+project.assets.json
